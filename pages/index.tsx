@@ -4,9 +4,7 @@ import {
   Button,
   ChakraProvider,
   Divider,
-  Flex,
   Heading,
-  Icon,
   IconButton,
   Image,
   Link,
@@ -18,7 +16,6 @@ import {
   FaEnvelope,
   FaFacebook,
   FaGithub,
-  FaLink,
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
@@ -54,10 +51,10 @@ export default function Home() {
             I'm M. Nindra Zaka
           </Heading>
           <Text color="white" textAlign="center">
-            Frontend development enthusiast that love well performance and
+            Frontend development enthusiast that loves well performance and
             tested code. Experienced in Javascript, Typescript, React, and other
-            modern frontend concept. Love learning and teaching other developer
-            in community to growth together
+            modern frontend concepts. Love learning and teaching other
+            developers in the community to grow together
           </Text>
         </Stack>
       </Box>
@@ -74,12 +71,12 @@ export default function Home() {
             <Stack marginBottom="8">
               <Heading size="lg">Learning and Teaching</Heading>
               <Text>
-                I love to learn and teach what i know in community. I contribute
-                as meetup speaker, workshop mentor and facilitator. What i love
-                about teaching is it can solidify what we know and deeping what
-                we just learn by explain it to other people and get feedback. I
-                also create learning roadmap that i use to teach about web
-                development
+                I love to learn and teach what I know in the community. I
+                contribute as a meetup speaker, workshop mentor, and
+                facilitator. The amazing thing that I love about teaching is it
+                not only helps others to grow, but it also solidifying what I
+                just learned and deepening my understanding. I create a learning
+                roadmap that I use to teach about web development
               </Text>
             </Stack>
             <Link
@@ -101,10 +98,11 @@ export default function Home() {
             My Blog Posts
           </Heading>
           <Text color="white" textAlign="center">
-            I write a blog that contains something that i just learn. So it can
-            help me remember something that i just learn. Also, i can share it
-            to other people so they can learn too or give me a feedback about
-            what i just learned
+            Every day we learn new things and keep improving. But, it is hard to
+            Remember everything that we learned. So I write blog posts that
+            explain what I just learn. So it will help me remember it in the
+            future. Also, I can share it with other people so they can learn too
+            and give me a feedback
           </Text>
         </Stack>
         <Link
@@ -118,12 +116,16 @@ export default function Home() {
         </Link>
       </Box>
 
-      <Box paddingX="32" paddingY="16">
+      <Box paddingX="56" paddingY="16">
         <Stack>
-          <Heading textAlign="center">My Recent Works</Heading>
+          <Heading size="lg" textAlign="center">
+            My Recent Works
+          </Heading>
           <Text textAlign="center">
-            I implement what i learn by creating side project or development
-            tools. Here is my recent works
+            I implement what I learn by creating a side project. It will help me
+            prove what I learn. When developing some projects, I found myself
+            often implement the same logic again and again, so I separate it and
+            make a library from it. Here are my recent works
           </Text>
         </Stack>
 
@@ -182,6 +184,8 @@ export default function Home() {
           </Heading>
           <Stack direction="row" spacing={8} justifyContent="center">
             <IconButton
+              borderRadius="full"
+              _hover={{ color: "black", backgroundColor: "white" }}
               borderColor="white"
               textColor="white"
               variant="outline"
@@ -190,6 +194,8 @@ export default function Home() {
             />
 
             <IconButton
+              borderRadius="full"
+              _hover={{ color: "black", backgroundColor: "white" }}
               borderColor="white"
               textColor="white"
               variant="outline"
@@ -198,6 +204,8 @@ export default function Home() {
             />
 
             <IconButton
+              borderRadius="full"
+              _hover={{ color: "black", backgroundColor: "white" }}
               borderColor="white"
               textColor="white"
               variant="outline"
@@ -206,6 +214,8 @@ export default function Home() {
             />
 
             <IconButton
+              borderRadius="full"
+              _hover={{ color: "black", backgroundColor: "white" }}
               borderColor="white"
               textColor="white"
               variant="outline"
@@ -214,6 +224,8 @@ export default function Home() {
             />
 
             <IconButton
+              borderRadius="full"
+              _hover={{ color: "black", backgroundColor: "white" }}
               borderColor="white"
               textColor="white"
               variant="outline"
