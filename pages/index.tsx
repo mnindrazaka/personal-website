@@ -2,6 +2,7 @@ import Head from "next/head";
 import {
   Box,
   Button,
+  ButtonProps,
   ChakraProvider,
   Divider,
   Heading,
@@ -21,6 +22,15 @@ import {
   FaLinkedin,
   FaTwitter,
 } from "react-icons/fa";
+
+type LinkButtonProps = ButtonProps & { href: string };
+const LinkButton = ({ href, children, ...buttonProps }: LinkButtonProps) => {
+  return (
+    <Link href={href} _hover={{ textDecoration: "none" }} tabIndex={-1}>
+      <Button {...buttonProps}>{children}</Button>
+    </Link>
+  );
+};
 
 export default function Home() {
   return (
@@ -204,15 +214,12 @@ export default function Home() {
                 roadmap that I use to teach about web development
               </Text>
             </Stack>
-            <Link
+            <LinkButton
               href="https://github.com/wrideveloper/miniclass-web/"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
+              colorScheme="blue"
             >
-              <Button inlineSize="auto" colorScheme="blue">
-                See teaching roadmap
-              </Button>
-            </Link>
+              See teaching roadmap
+            </LinkButton>
           </div>
         </Stack>
       </Box>
@@ -230,15 +237,9 @@ export default function Home() {
             and give me a feedback
           </Text>
         </Stack>
-        <Link
-          href="https://mnindrazaka.com/"
-          target="_blank"
-          _hover={{ textDecoration: "none" }}
-        >
-          <Button inlineSize="auto" colorScheme="blue">
-            See my blog posts
-          </Button>
-        </Link>
+        <LinkButton href="https://mnindrazaka.com/" colorScheme="blue">
+          See my blog posts
+        </LinkButton>
       </Box>
 
       <Box paddingX="56" paddingY="16">
