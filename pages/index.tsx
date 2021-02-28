@@ -8,6 +8,8 @@ import {
   IconButton,
   Image,
   Link,
+  List,
+  ListItem,
   SimpleGrid,
   Stack,
   Text,
@@ -27,7 +29,7 @@ export default function Home() {
         <title>M. Nindra Zaka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box paddingX="56" paddingY="32">
+      <Box paddingX="56" paddingY="24">
         <Stack direction="row" spacing="12">
           <Image
             borderRadius="full"
@@ -37,26 +39,149 @@ export default function Home() {
             alt="M. Nindra Zaka"
           />
           <Stack>
-            <Heading>M. Nindra Zaka</Heading>
-            <Text>Frontend Engineer</Text>
+            <Heading size="xl">Hi Everyone</Heading>
+            <Heading size="lg">
+              It's me,{" "}
+              <Box
+                display="inline-block"
+                backgroundColor="facebook.500"
+                padding="2"
+                color="white"
+              >
+                M. Nindra Zaka
+              </Box>
+            </Heading>
+            <Text>
+              Frontend development enthusiast that loves well performance and
+              tested code. Experienced in Javascript, Typescript, React, and
+              other modern frontend concepts. Love learning and teaching other
+              developers in the community to grow together
+            </Text>
           </Stack>
         </Stack>
       </Box>
       <Box bg="facebook.500" paddingX="56" paddingY="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
-            Hi Everyone
-          </Heading>
-          <Heading size="xl" color="white" textAlign="center">
-            I'm M. Nindra Zaka
+            Technology and Tools
           </Heading>
           <Text color="white" textAlign="center">
-            Frontend development enthusiast that loves well performance and
-            tested code. Experienced in Javascript, Typescript, React, and other
-            modern frontend concepts. Love learning and teaching other
-            developers in the community to grow together
+            I start my journey as frontend engineer 2 years ago. I've work on
+            freelance project and join startup to develop product. Here is the
+            list of technology, library, and tools that i used
           </Text>
         </Stack>
+        <SimpleGrid columns={3} marginTop="8" spacing="8">
+          <Box
+            backgroundColor="white"
+            borderWidth="thin"
+            borderRadius="lg"
+            padding="8"
+            width="100%"
+            height="100%"
+          >
+            <Heading size="md" textAlign="center">
+              Automated Testing
+            </Heading>
+            <Text textAlign="center">
+              Here is library and tools that i used to implementing automated
+              testing on frontend
+            </Text>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold">Unit Testing</Text>
+            <List>
+              <ListItem>Jest</ListItem>
+              <ListItem>React Testing Library</ListItem>
+              <ListItem>Chrome Accessibility Tree</ListItem>
+              <ListItem>Mock Service Worker</ListItem>
+            </List>
+
+            <Divider marginY="8" />
+            <Text fontWeight="bold">End to end Testing</Text>
+            <List>
+              <ListItem>Cypress</ListItem>
+            </List>
+          </Box>
+          <Box
+            backgroundColor="white"
+            borderWidth="thin"
+            borderRadius="lg"
+            padding="8"
+            width="100%"
+            height="100%"
+          >
+            <Heading size="md" textAlign="center">
+              Frontend Development
+            </Heading>
+            <Text textAlign="center">
+              Here is library and tools that i often use to develop frontend
+            </Text>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold">Library and Framework</Text>
+            <List>
+              <ListItem>React</ListItem>
+              <ListItem>Next.js</ListItem>
+            </List>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold">Static Typing</Text>
+            <List>
+              <ListItem>Typescript</ListItem>
+            </List>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold">Backend Integration</Text>
+            <List>
+              <ListItem>Apollo</ListItem>
+              <ListItem>React Query</ListItem>
+            </List>
+          </Box>
+
+          <Box
+            backgroundColor="white"
+            borderWidth="thin"
+            borderRadius="lg"
+            padding="8"
+            width="100%"
+            height="100%"
+          >
+            <Heading size="md" textAlign="center">
+              Frontend Performance
+            </Heading>
+            <Text textAlign="center">
+              Here is library and tools that i used to profiling frontend
+              performance
+            </Text>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold">Profiling Tools</Text>
+            <List>
+              <ListItem>React Profiler</ListItem>
+              <ListItem>Chrome DevTools Performance</ListItem>
+              <ListItem>Light House</ListItem>
+            </List>
+
+            <Divider marginY="8" />
+            <Text fontWeight="bold">Render Performance Optimization</Text>
+            <List>
+              <ListItem>Code Splitting</ListItem>
+              <ListItem>Prefetching</ListItem>
+              <ListItem>Caching Request</ListItem>
+              <ListItem>Caching Request</ListItem>
+            </List>
+
+            <Divider marginY="8" />
+            <Text fontWeight="bold">Load Performance Optimization</Text>
+            <List>
+              <ListItem>Code Splitting</ListItem>
+              <ListItem>Prefetching</ListItem>
+              <ListItem>Caching Request</ListItem>
+              <ListItem>Caching Request</ListItem>
+            </List>
+          </Box>
+        </SimpleGrid>
       </Box>
 
       <Box paddingX="56" paddingY="16">
