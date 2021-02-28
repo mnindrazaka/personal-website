@@ -7,6 +7,7 @@ import {
   Divider,
   Heading,
   IconButton,
+  IconButtonProps,
   Image,
   Link,
   List,
@@ -24,13 +25,33 @@ import {
 } from "react-icons/fa";
 
 type LinkButtonProps = ButtonProps & { href: string };
-const LinkButton = ({ href, children, ...buttonProps }: LinkButtonProps) => {
-  return (
-    <Link href={href} _hover={{ textDecoration: "none" }} tabIndex={-1}>
-      <Button {...buttonProps}>{children}</Button>
-    </Link>
-  );
-};
+const LinkButton = ({ href, children, ...buttonProps }: LinkButtonProps) => (
+  <Link href={href} _hover={{ textDecoration: "none" }} tabIndex={-1}>
+    <Button {...buttonProps}>{children}</Button>
+  </Link>
+);
+
+type SosialMediaButtonProps = IconButtonProps & { href: string };
+const SocialMediaButton = ({
+  href,
+  ...iconButtonProps
+}: SosialMediaButtonProps) => (
+  <Link
+    href={href}
+    _hover={{ textDecoration: "none" }}
+    borderRadius="full"
+    tabIndex={-1}
+  >
+    <IconButton
+      borderRadius="full"
+      _hover={{ color: "black", backgroundColor: "white" }}
+      borderColor="white"
+      textColor="white"
+      variant="outline"
+      {...iconButtonProps}
+    />
+  </Link>
+);
 
 export default function Home() {
   return (
@@ -438,89 +459,31 @@ export default function Home() {
             Want to know more ? Lets have a chat
           </Heading>
           <Stack direction="row" spacing={8} justifyContent="center">
-            <Link
+            <SocialMediaButton
               href="mailto:mnindrazaka@gmail.com"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
-              borderRadius="full"
-            >
-              <IconButton
-                borderRadius="full"
-                _hover={{ color: "black", backgroundColor: "white" }}
-                borderColor="white"
-                textColor="white"
-                variant="outline"
-                aria-label="gmail"
-                icon={<FaEnvelope />}
-              />
-            </Link>
-
-            <Link
+              aria-label="gmail"
+              icon={<FaEnvelope />}
+            />
+            <SocialMediaButton
               href="https://www.linkedin.com/in/mnindrazaka/"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
-              borderRadius="full"
-            >
-              <IconButton
-                borderRadius="full"
-                _hover={{ color: "black", backgroundColor: "white" }}
-                borderColor="white"
-                textColor="white"
-                variant="outline"
-                aria-label="linkedin"
-                icon={<FaLinkedin />}
-              />
-            </Link>
-
-            <Link
+              aria-label="linkedin"
+              icon={<FaLinkedin />}
+            />
+            <SocialMediaButton
               href="https://github.com/mnindrazaka"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
-              borderRadius="full"
-            >
-              <IconButton
-                borderRadius="full"
-                _hover={{ color: "black", backgroundColor: "white" }}
-                borderColor="white"
-                textColor="white"
-                variant="outline"
-                aria-label="github"
-                icon={<FaGithub />}
-              />
-            </Link>
-            <Link
+              aria-label="github"
+              icon={<FaGithub />}
+            />
+            <SocialMediaButton
               href="https://twitter.com/mnindrazaka"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
-              borderRadius="full"
-            >
-              <IconButton
-                borderRadius="full"
-                _hover={{ color: "black", backgroundColor: "white" }}
-                borderColor="white"
-                textColor="white"
-                variant="outline"
-                aria-label="twitter"
-                icon={<FaTwitter />}
-              />
-            </Link>
-
-            <Link
+              aria-label="twitter"
+              icon={<FaTwitter />}
+            />
+            <SocialMediaButton
               href="https://www.facebook.com/mnindrazaka/"
-              target="_blank"
-              _hover={{ textDecoration: "none" }}
-              borderRadius="full"
-            >
-              <IconButton
-                borderRadius="full"
-                _hover={{ color: "black", backgroundColor: "white" }}
-                borderColor="white"
-                textColor="white"
-                variant="outline"
-                aria-label="facebook"
-                icon={<FaFacebook />}
-              />
-            </Link>
+              aria-label="facebook"
+              icon={<FaFacebook />}
+            />
           </Stack>
         </Stack>
       </Box>
