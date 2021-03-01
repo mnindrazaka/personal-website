@@ -1,6 +1,7 @@
 import Head from "next/head";
 import {
   Box,
+  BoxProps,
   Button,
   ButtonProps,
   ChakraProvider,
@@ -76,6 +77,13 @@ const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
   </Link>
 );
 
+type SectionContainerProps = BoxProps;
+const SectionContainer = ({ children, ...boxProps }: SectionContainerProps) => (
+  <Box paddingX={[4, 8, 16, 32, 56, 120, 280]} {...boxProps}>
+    {children}
+  </Box>
+);
+
 export default function Home() {
   return (
     <ChakraProvider>
@@ -83,16 +91,17 @@ export default function Home() {
         <title>M. Nindra Zaka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box paddingX="56" paddingY="24">
-        <Stack direction="row" spacing="12">
+      <SectionContainer paddingY="24">
+        <Stack direction={{ base: "column", lg: "row" }} spacing="12">
           <Image
+            marginX={{ base: "auto", lg: "0" }}
             borderRadius="full"
             boxSize="150px"
             fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             src="https://media-exp1.licdn.com/dms/image/C5603AQF_RgE0dAzCsw/profile-displayphoto-shrink_800_800/0/1591972651641?e=1619654400&v=beta&t=cdT0c9ntyOimTHYufrjwfrl8ReqDXX73U0tFJf46yN8"
             alt="M. Nindra Zaka"
           />
-          <Stack>
+          <Stack textAlign={{ base: "center", lg: "left" }}>
             <Heading size="xl">Hi Everyone</Heading>
             <Heading size="lg">
               It's me,{" "}
@@ -113,8 +122,9 @@ export default function Home() {
             </Text>
           </Stack>
         </Stack>
-      </Box>
-      <Box bg="facebook.500" paddingX="56" paddingY="16">
+      </SectionContainer>
+
+      <SectionContainer bg="facebook.500" paddingY="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
             My Frontend Engineering Journey
@@ -129,49 +139,7 @@ export default function Home() {
             Here are some tools that I use for developing frontend
           </Text>
         </Stack>
-        <SimpleGrid columns={3} marginTop="8" spacing="8">
-          <Box
-            backgroundColor="white"
-            borderWidth="thin"
-            borderRadius="lg"
-            padding="8"
-            width="100%"
-            height="100%"
-            textAlign="center"
-          >
-            <Flex justifyContent="center" marginBottom={4}>
-              <FaCogs size={30} />
-            </Flex>
-
-            <Heading size="md" textAlign="center">
-              Automated Testing
-            </Heading>
-            <Text textAlign="center">
-              The reliability of the feature is important to make a quality
-              product. So implementing automated tests is important to guarantee
-              feature reliability. Here are some tools that I used to implement
-              the automated test in the frontend
-            </Text>
-            <Divider marginY="8" />
-
-            <Text fontWeight="bold" textAlign="center">
-              Unit Testing
-            </Text>
-            <List>
-              <ListItem textAlign="center">Jest</ListItem>
-              <ListItem textAlign="center">React Testing Library</ListItem>
-              <ListItem textAlign="center">Chrome Accessibility Tree</ListItem>
-              <ListItem textAlign="center">Mock Service Worker</ListItem>
-            </List>
-
-            <Divider marginY="8" />
-            <Text fontWeight="bold" textAlign="center">
-              End to end Testing
-            </Text>
-            <List>
-              <ListItem textAlign="center">Cypress</ListItem>
-            </List>
-          </Box>
+        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
           <Box
             backgroundColor="white"
             borderWidth="thin"
@@ -214,6 +182,49 @@ export default function Home() {
             <List>
               <ListItem textAlign="center">Apollo</ListItem>
               <ListItem textAlign="center">React Query</ListItem>
+            </List>
+          </Box>
+
+          <Box
+            backgroundColor="white"
+            borderWidth="thin"
+            borderRadius="lg"
+            padding="8"
+            width="100%"
+            height="100%"
+            textAlign="center"
+          >
+            <Flex justifyContent="center" marginBottom={4}>
+              <FaCogs size={30} />
+            </Flex>
+
+            <Heading size="md" textAlign="center">
+              Automated Testing
+            </Heading>
+            <Text textAlign="center">
+              The reliability of the feature is important to make a quality
+              product. So implementing automated tests is important to guarantee
+              feature reliability. Here are some tools that I used to implement
+              the automated test in the frontend
+            </Text>
+            <Divider marginY="8" />
+
+            <Text fontWeight="bold" textAlign="center">
+              Unit Testing
+            </Text>
+            <List>
+              <ListItem textAlign="center">Jest</ListItem>
+              <ListItem textAlign="center">React Testing Library</ListItem>
+              <ListItem textAlign="center">Chrome Accessibility Tree</ListItem>
+              <ListItem textAlign="center">Mock Service Worker</ListItem>
+            </List>
+
+            <Divider marginY="8" />
+            <Text fontWeight="bold" textAlign="center">
+              End to end Testing
+            </Text>
+            <List>
+              <ListItem textAlign="center">Cypress</ListItem>
             </List>
           </Box>
 
@@ -270,39 +281,38 @@ export default function Home() {
             </List>
           </Box>
         </SimpleGrid>
-      </Box>
+      </SectionContainer>
 
-      <Box paddingX="56" paddingY="16">
-        <Stack direction="row" spacing="16">
+      <SectionContainer paddingY="16">
+        <Stack direction={{ base: "column", lg: "row" }} spacing="16">
           <Image
+            margin={{ base: "auto", lg: "0" }}
             borderRadius="lg"
             boxSize="xs"
             src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
             alt="Learning and Teaching"
           />
-          <div>
-            <Stack marginBottom="8">
-              <Heading size="lg">Learning and Teaching</Heading>
-              <Text>
-                I love to learn and teach what I know in the community. I
-                contribute as a meetup speaker, workshop mentor, and
-                facilitator. The amazing thing that I love about teaching is it
-                not only helps others to grow but also solidifying what I just
-                learned and deepening my understanding. I create a roadmap that
-                I use to teach about web development
-              </Text>
-            </Stack>
+          <Stack textAlign={{ base: "center", lg: "left" }}>
+            <Heading size="lg">Learning and Teaching</Heading>
+            <Text>
+              I love to learn and teach what I know in the community. I
+              contribute as a meetup speaker, workshop mentor, and facilitator.
+              The amazing thing that I love about teaching is it not only helps
+              others to grow but also solidifying what I just learned and
+              deepening my understanding. I create a roadmap that I use to teach
+              about web development
+            </Text>
             <LinkButton
               href="https://github.com/wrideveloper/miniclass-web/"
               colorScheme="blue"
             >
-              See teaching roadmap
+              See learning roadmap
             </LinkButton>
-          </div>
+          </Stack>
         </Stack>
-      </Box>
+      </SectionContainer>
 
-      <Box bg="gray.800" paddingX="56" paddingY="16" textAlign="center">
+      <SectionContainer bg="gray.800" paddingY="16" textAlign="center">
         <Stack marginBottom="8">
           <Heading size="lg" color="white" textAlign="center">
             My Blog Posts
@@ -318,9 +328,9 @@ export default function Home() {
         <LinkButton href="https://mnindrazaka.com/" colorScheme="blue">
           See my blog posts
         </LinkButton>
-      </Box>
+      </SectionContainer>
 
-      <Box paddingX="56" paddingY="16">
+      <SectionContainer paddingY="16">
         <Stack>
           <Heading size="lg" textAlign="center">
             My Recent Works
@@ -335,7 +345,7 @@ export default function Home() {
 
         <Divider marginY="8" />
 
-        <SimpleGrid columns={3} spacing="8">
+        <SimpleGrid columns={{ base: 1, lg: 3 }} spacing="8">
           <ProjectCard
             title="Lentera"
             description="Online course platform that will give you a guided struggle to
@@ -383,9 +393,9 @@ export default function Home() {
             href="https://www.npmjs.com/package/react-switch-state"
           />
         </SimpleGrid>
-      </Box>
+      </SectionContainer>
 
-      <Box bg="gray.800" paddingX="56" paddingY="16">
+      <SectionContainer bg="gray.800" paddingY="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
             That's it
@@ -393,7 +403,11 @@ export default function Home() {
           <Heading size="md" color="white" textAlign="center" marginBottom="8">
             Want to know more ? Lets have a chat
           </Heading>
-          <Stack direction="row" spacing={8} justifyContent="center">
+          <Stack
+            direction="row"
+            spacing={{ base: 4, lg: 8 }}
+            justifyContent="center"
+          >
             <SocialMediaButton
               href="mailto:mnindrazaka@gmail.com"
               aria-label="gmail"
@@ -421,12 +435,13 @@ export default function Home() {
             />
           </Stack>
         </Stack>
-      </Box>
-      <Box bg="black" paddingY="8">
+      </SectionContainer>
+
+      <SectionContainer bg="black" paddingY="8">
         <Text color="white" textAlign="center">
           Copyright &copy; 2021 M. Nindra Zaka
         </Text>
-      </Box>
+      </SectionContainer>
     </ChakraProvider>
   );
 }
