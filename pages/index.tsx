@@ -53,6 +53,25 @@ const SocialMediaButton = ({
   </Link>
 );
 
+type ProjectCardProps = { title: string; description: string; href: string };
+const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
+  <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
+    <Box
+      borderWidth="thin"
+      borderRadius="lg"
+      padding="8"
+      width="100%"
+      height="100%"
+    >
+      <Heading size="md" textAlign="center">
+        {title}
+      </Heading>
+      <Divider marginY="4" />
+      <Text textAlign="center">{description}</Text>
+    </Box>
+  </Link>
+);
+
 export default function Home() {
   return (
     <ChakraProvider>
@@ -279,174 +298,52 @@ export default function Home() {
         <Divider marginY="8" />
 
         <SimpleGrid columns={3} spacing="8">
-          <Link
+          <ProjectCard
+            title="Lentera"
+            description="Online course platform that will give you a guided struggle to
+                learn engineering skill faster and understand better"
             href="https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">Lentera</Heading>
-              <Text>
-                Online course platform that will give you a guided struggle to
-                learn engineering skill faster and understand better
-              </Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="Code Send"
+            description="Hot code update platform"
             href="https://code-send.now.sh/"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">Code Send</Heading>
-              <Text>Hot code update platform</Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="WRI Website"
+            description="Community Profile Website of Workshop & Riset Informatika"
             href="http://wri.polinema.ac.id/"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">WRI Website</Heading>
-              <Text>
-                Community Profile Website of Workshop & Riset Informatika
-              </Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="crudone"
+            description="crud ? done ! react component for easy crud"
             href="https://www.npmjs.com/package/crudone"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">crudone</Heading>
-              <Text>crud ? done ! react component for easy crud</Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="Crew Monitoring"
+            description="Community Crew Monitoring"
             href="https://github.com/wrideveloper/crew-monitoring"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">Crew Monitoring</Heading>
-              <Text>Community Crew Monitoring</Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="react-async-handler"
+            description="React hook for handling asynchronous task"
             href="https://www.npmjs.com/package/react-async-handler"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">react-async-handler</Heading>
-              <Text>React hook for handling asynchronous task</Text>
-            </Box>
-          </Link>
-
-          <Link
-            href="https://www.npmjs.com/package/react-debounce-effect"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">react-debounce-effect</Heading>
-              <Text>React use effect hook but with debounce</Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="react-async-handler"
+            description="React hook for handling asynchronous task"
+            href="https://www.npmjs.com/package/react-async-handler"
+          />
+          <ProjectCard
+            title="react-local-storage-state"
+            description="React hook for persisting React state to local storage"
             href="https://www.npmjs.com/package/react-local-storage-state"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">react-local-storage-state</Heading>
-              <Text>
-                React hook for persisting React state to local storage
-              </Text>
-            </Box>
-          </Link>
-
-          <Link
+          />
+          <ProjectCard
+            title="react-switch-state"
+            description="React hook for switching state on and off"
             href="https://www.npmjs.com/package/react-switch-state"
-            target="_blank"
-            _hover={{ textDecoration: "none" }}
-            borderRadius="lg"
-          >
-            <Box
-              borderWidth="thin"
-              borderRadius="lg"
-              padding="8"
-              width="100%"
-              height="100%"
-            >
-              <Heading size="md">react-switch-state</Heading>
-              <Text>React hook for switching state on and off</Text>
-            </Box>
-          </Link>
+          />
         </SimpleGrid>
       </Box>
 
