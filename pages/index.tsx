@@ -234,7 +234,7 @@ export default function Home() {
             <Text textAlign="center">
               Performance is the art of avoiding work, it is so fun to find
               unnecessary work and optimize it. Here is some tools and method
-              that i used to profile and optimize frontend performance
+              that i learn to profile and optimize frontend performance
             </Text>
             <Divider marginY="8" />
 
