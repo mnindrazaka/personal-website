@@ -5,6 +5,7 @@ import {
   ButtonProps,
   ChakraProvider,
   Divider,
+  Flex,
   Heading,
   IconButton,
   IconButtonProps,
@@ -17,10 +18,13 @@ import {
   Text,
 } from "@chakra-ui/react";
 import {
+  FaCode,
+  FaCogs,
   FaEnvelope,
   FaFacebook,
   FaGithub,
   FaLinkedin,
+  FaRocket,
   FaTwitter,
 } from "react-icons/fa";
 
@@ -102,10 +106,10 @@ export default function Home() {
               </Box>
             </Heading>
             <Text>
-              Frontend development enthusiast that loves well performance and
+              Frontend engineering enthusiast that loves well performance and
               tested code. Experienced in Javascript, Typescript, React, and
-              other modern frontend concepts. Love learning and teaching other
-              developers in the community to grow together
+              other modern frontend concepts. Love learning and teaching others
+              to grow together
             </Text>
           </Stack>
         </Stack>
@@ -113,12 +117,16 @@ export default function Home() {
       <Box bg="facebook.500" paddingX="56" paddingY="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
-            Technology and Tools
+            My Frontend Engineering Journey
           </Heading>
           <Text color="white" textAlign="center">
-            I start my journey as frontend engineer 2 years ago. I've work on
-            freelance project and join startup to develop product. Here is the
-            list of technology, library, and tools that i used
+            I start my journey as a frontend engineer in 2018. I start by
+            deepening my javascript skill and doing some side projects. In 2019
+            I take an internship in a startup company. Then I work on some
+            freelance projects and get my first full-time job as a frontend
+            engineer in 2020. Now, I'm excited to continue my journey by
+            deepening my skill in automated testing and web performance skills.
+            Here are some tools that I use for developing frontend
           </Text>
         </Stack>
         <SimpleGrid columns={3} marginTop="8" spacing="8">
@@ -129,28 +137,39 @@ export default function Home() {
             padding="8"
             width="100%"
             height="100%"
+            textAlign="center"
           >
+            <Flex justifyContent="center" marginBottom={4}>
+              <FaCogs size={30} />
+            </Flex>
+
             <Heading size="md" textAlign="center">
               Automated Testing
             </Heading>
             <Text textAlign="center">
-              Here is library and tools that i used to implementing automated
-              testing on frontend
+              The reliability of the feature is important to make a quality
+              product. So implementing automated tests is important to guarantee
+              feature reliability. Here are some tools that I used to implement
+              the automated test in the frontend
             </Text>
             <Divider marginY="8" />
 
-            <Text fontWeight="bold">Unit Testing</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Unit Testing
+            </Text>
             <List>
-              <ListItem>Jest</ListItem>
-              <ListItem>React Testing Library</ListItem>
-              <ListItem>Chrome Accessibility Tree</ListItem>
-              <ListItem>Mock Service Worker</ListItem>
+              <ListItem textAlign="center">Jest</ListItem>
+              <ListItem textAlign="center">React Testing Library</ListItem>
+              <ListItem textAlign="center">Chrome Accessibility Tree</ListItem>
+              <ListItem textAlign="center">Mock Service Worker</ListItem>
             </List>
 
             <Divider marginY="8" />
-            <Text fontWeight="bold">End to end Testing</Text>
+            <Text fontWeight="bold" textAlign="center">
+              End to end Testing
+            </Text>
             <List>
-              <ListItem>Cypress</ListItem>
+              <ListItem textAlign="center">Cypress</ListItem>
             </List>
           </Box>
           <Box
@@ -161,31 +180,40 @@ export default function Home() {
             width="100%"
             height="100%"
           >
+            <Flex justifyContent="center" marginBottom={4}>
+              <FaCode size={30} />
+            </Flex>
             <Heading size="md" textAlign="center">
               Frontend Development
             </Heading>
             <Text textAlign="center">
-              Here is library and tools that i often use to develop frontend
+              Here is some library and tools that i use to develop frontend
             </Text>
             <Divider marginY="8" />
 
-            <Text fontWeight="bold">Library and Framework</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Library and Framework
+            </Text>
             <List>
-              <ListItem>React</ListItem>
-              <ListItem>Next.js</ListItem>
+              <ListItem textAlign="center">React</ListItem>
+              <ListItem textAlign="center">Next.js</ListItem>
             </List>
             <Divider marginY="8" />
 
-            <Text fontWeight="bold">Static Typing</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Static Typing
+            </Text>
             <List>
-              <ListItem>Typescript</ListItem>
+              <ListItem textAlign="center">Typescript</ListItem>
             </List>
             <Divider marginY="8" />
 
-            <Text fontWeight="bold">Backend Integration</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Backend Integration
+            </Text>
             <List>
-              <ListItem>Apollo</ListItem>
-              <ListItem>React Query</ListItem>
+              <ListItem textAlign="center">Apollo</ListItem>
+              <ListItem textAlign="center">React Query</ListItem>
             </List>
           </Box>
 
@@ -197,38 +225,48 @@ export default function Home() {
             width="100%"
             height="100%"
           >
+            <Flex justifyContent="center" marginBottom={4}>
+              <FaRocket size={30} />
+            </Flex>
             <Heading size="md" textAlign="center">
               Frontend Performance
             </Heading>
             <Text textAlign="center">
-              Here is library and tools that i used to profiling frontend
-              performance
+              Performance is the art of avoiding work, it is so fun to find
+              unnecessary work and optimize it. Here is some tools and method
+              that i used to profile and optimize frontend performance
             </Text>
             <Divider marginY="8" />
 
-            <Text fontWeight="bold">Profiling Tools</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Profiling Tools
+            </Text>
             <List>
-              <ListItem>React Profiler</ListItem>
-              <ListItem>Chrome DevTools Performance</ListItem>
-              <ListItem>Light House</ListItem>
+              <ListItem textAlign="center">React Profiler</ListItem>
+              <ListItem textAlign="center">
+                Chrome DevTools Performance
+              </ListItem>
+              <ListItem textAlign="center">Light House</ListItem>
             </List>
 
             <Divider marginY="8" />
-            <Text fontWeight="bold">Render Performance Optimization</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Rendering Performance Optimization
+            </Text>
             <List>
-              <ListItem>Code Splitting</ListItem>
-              <ListItem>Prefetching</ListItem>
-              <ListItem>Caching Request</ListItem>
-              <ListItem>Caching Request</ListItem>
+              <ListItem textAlign="center">Memoize Heavy Calculation</ListItem>
+              <ListItem textAlign="center">Memoize Component Render</ListItem>
+              <ListItem textAlign="center">Optimize Context Value</ListItem>
             </List>
 
             <Divider marginY="8" />
-            <Text fontWeight="bold">Load Performance Optimization</Text>
+            <Text fontWeight="bold" textAlign="center">
+              Loading Performance Optimization
+            </Text>
             <List>
-              <ListItem>Code Splitting</ListItem>
-              <ListItem>Prefetching</ListItem>
-              <ListItem>Caching Request</ListItem>
-              <ListItem>Caching Request</ListItem>
+              <ListItem textAlign="center">Code Splitting</ListItem>
+              <ListItem textAlign="center">Caching Data From Backend</ListItem>
+              <ListItem textAlign="center">Preload Assets</ListItem>
             </List>
           </Box>
         </SimpleGrid>
@@ -249,9 +287,9 @@ export default function Home() {
                 I love to learn and teach what I know in the community. I
                 contribute as a meetup speaker, workshop mentor, and
                 facilitator. The amazing thing that I love about teaching is it
-                not only helps others to grow, but also solidifying what I just
-                learned and deepening my understanding. I create a learning
-                roadmap that I use to teach about web development
+                not only helps others to grow but also solidifying what I just
+                learned and deepening my understanding. I create a roadmap that
+                I use to teach about web development
               </Text>
             </Stack>
             <LinkButton
