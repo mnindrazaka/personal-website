@@ -58,6 +58,46 @@ const SocialMediaButton = ({
   </Link>
 );
 
+type SkillCardProps = {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+};
+const SkillCard: React.FC<SkillCardProps> = ({
+  children,
+  title,
+  description,
+  icon,
+}) => (
+  <Flex
+    backgroundColor="white"
+    borderWidth="thin"
+    borderRadius="lg"
+    padding="4"
+    width="100%"
+    height="100%"
+    flexDirection="column"
+    alignItems="center"
+    textAlign="center"
+  >
+    <Box
+      display="inline-block"
+      padding="4"
+      marginBottom={4}
+      borderWidth="thin"
+      borderRadius="full"
+    >
+      {icon}
+    </Box>
+    <Stack spacing="4" marginBottom="4">
+      <Heading size="md">{title}</Heading>
+      <Text>{description}</Text>
+      <Divider />
+    </Stack>
+    {children}
+  </Flex>
+);
+
 type ProjectCardProps = { title: string; description: string; href: string };
 const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
   <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
@@ -124,7 +164,7 @@ export default function Home() {
         </Stack>
       </SectionContainer>
 
-      <SectionContainer bg="facebook.500" paddingY="16">
+      <SectionContainer bg="facebook.500" paddingY="32">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
             My Frontend Engineering Journey
@@ -139,26 +179,15 @@ export default function Home() {
             Here are some tools that I use for developing frontend
           </Text>
         </Stack>
-        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
-          <Box
-            backgroundColor="white"
-            borderWidth="thin"
-            borderRadius="lg"
-            padding="8"
-            width="100%"
-            height="100%"
-          >
-            <Flex justifyContent="center" marginBottom={4}>
-              <FaCode size={30} />
-            </Flex>
-            <Heading size="md" textAlign="center">
-              Frontend Development
-            </Heading>
-            <Text textAlign="center">
-              Here is some library and tools that i use to develop frontend
-            </Text>
-            <Divider marginY="8" />
+      </SectionContainer>
 
+      <SectionContainer marginTop="-32">
+        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
+          <SkillCard
+            title="Frontend Development"
+            description="Frontend development is fun because you can translate the design to be a reality. Here are some library and tools that I used to develop frontend"
+            icon={<FaCode size={30} />}
+          >
             <Text fontWeight="bold" textAlign="center">
               Library and Framework
             </Text>
@@ -183,32 +212,16 @@ export default function Home() {
               <ListItem textAlign="center">Apollo</ListItem>
               <ListItem textAlign="center">React Query</ListItem>
             </List>
-          </Box>
+          </SkillCard>
 
-          <Box
-            backgroundColor="white"
-            borderWidth="thin"
-            borderRadius="lg"
-            padding="8"
-            width="100%"
-            height="100%"
-            textAlign="center"
+          <SkillCard
+            title="Automated Testing"
+            description="Reliability is important to make a quality
+            product. Implementing automated tests is important to guarantee
+            reliability. Here are some tools that I used for implementing
+            automated test in the frontend"
+            icon={<FaCogs size={30} />}
           >
-            <Flex justifyContent="center" marginBottom={4}>
-              <FaCogs size={30} />
-            </Flex>
-
-            <Heading size="md" textAlign="center">
-              Automated Testing
-            </Heading>
-            <Text textAlign="center">
-              The reliability of the feature is important to make a quality
-              product. So implementing automated tests is important to guarantee
-              feature reliability. Here are some tools that I used to implement
-              the automated test in the frontend
-            </Text>
-            <Divider marginY="8" />
-
             <Text fontWeight="bold" textAlign="center">
               Unit Testing
             </Text>
@@ -226,29 +239,15 @@ export default function Home() {
             <List>
               <ListItem textAlign="center">Cypress</ListItem>
             </List>
-          </Box>
+          </SkillCard>
 
-          <Box
-            backgroundColor="white"
-            borderWidth="thin"
-            borderRadius="lg"
-            padding="8"
-            width="100%"
-            height="100%"
+          <SkillCard
+            title="Frontend Performance"
+            description="Performance is the art of avoiding work, it is so fun to find
+            unnecessary work and optimize it. Here is some tools and method
+            that i learn to profile and optimize frontend performance"
+            icon={<FaRocket size={30} />}
           >
-            <Flex justifyContent="center" marginBottom={4}>
-              <FaRocket size={30} />
-            </Flex>
-            <Heading size="md" textAlign="center">
-              Frontend Performance
-            </Heading>
-            <Text textAlign="center">
-              Performance is the art of avoiding work, it is so fun to find
-              unnecessary work and optimize it. Here is some tools and method
-              that i learn to profile and optimize frontend performance
-            </Text>
-            <Divider marginY="8" />
-
             <Text fontWeight="bold" textAlign="center">
               Profiling Tools
             </Text>
@@ -279,36 +278,54 @@ export default function Home() {
               <ListItem textAlign="center">Caching Data From Backend</ListItem>
               <ListItem textAlign="center">Preload Assets</ListItem>
             </List>
-          </Box>
+          </SkillCard>
         </SimpleGrid>
       </SectionContainer>
 
-      <SectionContainer paddingY="16">
-        <Stack direction={{ base: "column", lg: "row" }} spacing="16">
-          <Image
-            margin={{ base: "auto", lg: "0" }}
-            borderRadius="lg"
-            boxSize="xs"
-            src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
-            alt="Learning and Teaching"
-          />
-          <Stack textAlign={{ base: "center", lg: "left" }}>
-            <Heading size="lg">Learning and Teaching</Heading>
-            <Text>
-              I love to learn and teach what I know in the community. I
-              contribute as a meetup speaker, workshop mentor, and facilitator.
-              The amazing thing that I love about teaching is it not only helps
-              others to grow but also solidifying what I just learned and
-              deepening my understanding. I create a roadmap that I use to teach
-              about web development
-            </Text>
-            <LinkButton
-              href="https://github.com/wrideveloper/miniclass-web/"
-              colorScheme="blue"
-            >
-              See learning roadmap
-            </LinkButton>
-          </Stack>
+      <SectionContainer paddingY="32">
+        <Stack spacing="8" textAlign="center">
+          <Heading size="lg">Learning and Teaching</Heading>
+          <Text>
+            I love to learn and teach what I know in the community. I contribute
+            as a meetup speaker, workshop mentor, and facilitator. The amazing
+            thing that I love about teaching is it not only helps others to grow
+            but also solidifying what I just learned and deepening my
+            understanding. I create a roadmap that I use to teach about web
+            development
+          </Text>
+          <LinkButton
+            href="https://github.com/wrideveloper/miniclass-web/"
+            colorScheme="blue"
+          >
+            See learning roadmap
+          </LinkButton>
+          <SimpleGrid
+            display={{ base: "none", sm: "grid" }}
+            columns={3}
+            spacing="8"
+          >
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="lg"
+              src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
+              alt="Learning and Teaching"
+            />
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="lg"
+              src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
+              alt="Learning and Teaching"
+            />
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="lg"
+              src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
+              alt="Learning and Teaching"
+            />
+          </SimpleGrid>
         </Stack>
       </SectionContainer>
 
@@ -354,7 +371,7 @@ export default function Home() {
           />
           <ProjectCard
             title="Code Send"
-            description="Hot code update platform"
+            description="Hot code update platform to distribute update on react native application faster"
             href="https://code-send.now.sh/"
           />
           <ProjectCard
@@ -363,7 +380,7 @@ export default function Home() {
             href="http://wri.polinema.ac.id/"
           />
           <ProjectCard
-            title="crudone"
+            title="Crudone"
             description="crud ? done ! react component for easy crud"
             href="https://www.npmjs.com/package/crudone"
           />
@@ -373,22 +390,22 @@ export default function Home() {
             href="https://github.com/wrideveloper/crew-monitoring"
           />
           <ProjectCard
-            title="react-async-handler"
+            title="React Async Handler"
             description="React hook for handling asynchronous task"
             href="https://www.npmjs.com/package/react-async-handler"
           />
           <ProjectCard
-            title="react-async-handler"
-            description="React hook for handling asynchronous task"
-            href="https://www.npmjs.com/package/react-async-handler"
+            title="React Debounce Effect"
+            description="React use effect hook but with debounce"
+            href="https://www.npmjs.com/package/react-debounce-effect"
           />
           <ProjectCard
-            title="react-local-storage-state"
+            title="React Local Storage State"
             description="React hook for persisting React state to local storage"
             href="https://www.npmjs.com/package/react-local-storage-state"
           />
           <ProjectCard
-            title="react-switch-state"
+            title="React Switch State"
             description="React hook for switching state on and off"
             href="https://www.npmjs.com/package/react-switch-state"
           />
