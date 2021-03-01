@@ -73,12 +73,13 @@ const SkillCard: React.FC<SkillCardProps> = ({
     backgroundColor="white"
     borderWidth="thin"
     borderRadius="lg"
-    padding="4"
+    padding="8"
     width="100%"
     height="100%"
     flexDirection="column"
     alignItems="center"
     textAlign="center"
+    boxShadow="md"
   >
     <Box
       display="inline-block"
@@ -107,6 +108,7 @@ const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
       padding="8"
       width="100%"
       height="100%"
+      boxShadow="md"
     >
       <Heading size="md" textAlign="center">
         {title}
@@ -308,22 +310,22 @@ export default function Home() {
               width="100%"
               height="100%"
               borderRadius="lg"
-              src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
-              alt="Learning and Teaching"
+              src="https://lh3.googleusercontent.com/pw/ACtC-3femVHb8s_m0chY-bJA9zxOosSdw0mlNB1vlj86bb5gz9WASCgJAiakA7xmGDZOP7XugkA1-fPrmXPzQ6pHvZX0O1mmCl1HdCy6_fc5oqHwtmYtn4yZCGHg7Gbrl3KtoJRFHW6sXVcf6KtZwKYmiX5-=w2190-h1642-no?authuser=0"
+              alt="Node.js Research 2018"
+            />
+            <Image
+              width="100%"
+              height="100%"
+              borderRadius="lg"
+              src="https://i.ibb.co/X2t4kpw/ed3b79ff-0e48-48fd-9a83-ebf91edb4253.jpg"
+              alt="Compound Component Talk"
             />
             <Image
               width="100%"
               height="100%"
               borderRadius="lg"
               src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
-              alt="Learning and Teaching"
-            />
-            <Image
-              width="100%"
-              height="100%"
-              borderRadius="lg"
-              src="https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61"
-              alt="Learning and Teaching"
+              alt="React Workshop"
             />
           </SimpleGrid>
         </Stack>
