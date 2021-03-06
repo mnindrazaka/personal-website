@@ -149,7 +149,7 @@ export default function Home() {
               It's me,{" "}
               <Box
                 display="inline-block"
-                backgroundColor="facebook.500"
+                backgroundColor="purple.600"
                 padding="2"
                 color="white"
               >
@@ -166,7 +166,7 @@ export default function Home() {
         </Stack>
       </SectionContainer>
 
-      <SectionContainer bg="facebook.500" paddingY="32">
+      <SectionContainer bg="purple.600" paddingBottom="32" paddingTop="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
             My Frontend Engineering Journey
@@ -255,6 +255,7 @@ export default function Home() {
             </Text>
             <List>
               <ListItem textAlign="center">React Profiler</ListItem>
+              <ListItem textAlign="center">Chrome DevTools Network</ListItem>
               <ListItem textAlign="center">
                 Chrome DevTools Performance
               </ListItem>
@@ -269,6 +270,7 @@ export default function Home() {
               <ListItem textAlign="center">Memoize Heavy Calculation</ListItem>
               <ListItem textAlign="center">Memoize Component Render</ListItem>
               <ListItem textAlign="center">Optimize Context Value</ListItem>
+              <ListItem textAlign="center">Windowing</ListItem>
             </List>
 
             <Divider marginY="8" />
@@ -284,7 +286,7 @@ export default function Home() {
         </SimpleGrid>
       </SectionContainer>
 
-      <SectionContainer paddingY="32">
+      <SectionContainer paddingY="24">
         <Stack spacing="8" textAlign="center">
           <Heading size="lg">Learning and Teaching</Heading>
           <Text>
@@ -297,7 +299,7 @@ export default function Home() {
           </Text>
           <LinkButton
             href="https://github.com/wrideveloper/miniclass-web/"
-            colorScheme="blue"
+            colorScheme="purple"
           >
             See learning roadmap
           </LinkButton>
@@ -344,7 +346,7 @@ export default function Home() {
             and give me a feedback
           </Text>
         </Stack>
-        <LinkButton href="https://mnindrazaka.com/" colorScheme="blue">
+        <LinkButton href="https://mnindrazaka.com/" colorScheme="purple">
           See my blog posts
         </LinkButton>
       </SectionContainer>
