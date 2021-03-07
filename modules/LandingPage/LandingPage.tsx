@@ -1,16 +1,11 @@
 import Head from "next/head";
 import {
   Box,
-  Button,
   ChakraProvider,
   Divider,
-  Flex,
   Heading,
   Image,
   ImageProps,
-  Link,
-  List,
-  ListItem,
   SimpleGrid,
   Stack,
   Text,
@@ -60,6 +55,15 @@ const projects: ProjectCardProps[] = [
       "Online course platform that will give you a guided struggle to learn engineering skill faster and understand better",
     href:
       "https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629",
+    tools: [
+      "Next.js",
+      "Typescript",
+      "Apollo",
+      "Hasura",
+      "Auth0",
+      "React Testing Library",
+      "Ant Design",
+    ],
   },
   {
     title: "Code Send",
@@ -67,41 +71,57 @@ const projects: ProjectCardProps[] = [
       "Hot code update platform to distribute update on react native application faster",
     href:
       "https://github.com/mnindrazaka/code-send/tree/master/code-send-plugin",
+    tools: [
+      "React.js",
+      "React Native",
+      "Node.js",
+      "Typescript",
+      "Cypress",
+      "Ant Design",
+    ],
   },
   {
     title: "WRI Website",
-    description: "Community Profile Website of Workshop & Riset Informatika",
+    description:
+      "Workshop Riset Informatika is IT Community in State Polytechnic of Malang. I create a community profile website to introduce it to the other community",
     href: "http://wri.polinema.ac.id/",
+    tools: ["React.js", "Semantic UI"],
   },
   {
     title: "Crudone",
     description: "crud ? done ! react component for easy crud",
     href: "https://www.npmjs.com/package/crudone",
+    tools: ["React.js", "Typescript", "Compound Component"],
   },
   {
     title: "Crew Monitoring",
     description: "Community Crew Monitoring",
     href: "https://github.com/wrideveloper/crew-monitoring",
+    tools: ["React.js", "Typescript", "Semantic UI", "Crudone"],
   },
   {
     title: "React Async Handler",
     description: "React hook for handling asynchronous task",
     href: "https://www.npmjs.com/package/react-async-handler",
+    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Debounce Effect",
     description: "React use effect hook but with debounce",
     href: "https://www.npmjs.com/package/react-debounce-effect",
+    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Local Storage State",
     description: "React hook for persisting React state to local storage",
     href: "https://www.npmjs.com/package/react-local-storage-state",
+    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Switch State",
     description: "React hook for switching state on and off",
     href: "https://www.npmjs.com/package/react-switch-state",
+    tools: ["React.js", "Typescript", "React Testing Library"],
   },
 ];
 

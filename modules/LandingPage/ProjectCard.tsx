@@ -1,12 +1,23 @@
 import React from "react";
-import { Box, Divider, Heading, Link, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Heading,
+  HStack,
+  Link,
+  Tag,
+  Text,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 
 export type ProjectCardProps = {
   title: string;
   description: string;
   href: string;
+  tools: string[];
 };
-const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
+const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
   <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
     <Box
       borderWidth="thin"
@@ -22,6 +33,16 @@ const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
       </Heading>
       <Divider marginY="4" />
       <Text textAlign="center">{description}</Text>
+      <Divider marginY="4" />
+      <Wrap justify="center">
+        {tools.map((tool) => (
+          <WrapItem>
+            <Tag size="sm" key={tool} colorScheme="purple" variant="outline">
+              {tool}
+            </Tag>
+          </WrapItem>
+        ))}
+      </Wrap>
     </Box>
   </Link>
 );
