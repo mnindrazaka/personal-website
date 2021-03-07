@@ -376,7 +376,7 @@ export default function Home() {
           <ProjectCard
             title="Code Send"
             description="Hot code update platform to distribute update on react native application faster"
-            href="https://code-send.now.sh/"
+            href="https://github.com/mnindrazaka/code-send/tree/master/code-send-plugin"
           />
           <ProjectCard
             title="WRI Website"
