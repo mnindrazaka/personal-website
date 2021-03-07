@@ -15,6 +15,7 @@ const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
       width="100%"
       height="100%"
       boxShadow="md"
+      backgroundColor="white"
     >
       <Heading size="md" textAlign="center">
         {title}

@@ -1,11 +1,14 @@
 import Head from "next/head";
 import {
   Box,
+  Button,
   ChakraProvider,
   Divider,
+  Flex,
   Heading,
   Image,
   ImageProps,
+  Link,
   List,
   ListItem,
   SimpleGrid,
@@ -27,25 +30,26 @@ import SkillCard, { SkillCardProps } from "./SkillCard";
 import LinkButton from "./LinkButton";
 import ProjectCard, { ProjectCardProps } from "./ProjectCard";
 import SocialMediaButton, { SocialMediaButtonProps } from "./SocialMediaButton";
+import PostCard, { PostCardProps } from "./PostCard";
 
 const skills: SkillCardProps[] = [
   {
     title: "Frontend Development",
     description:
       "Frontend development is fun because you can translate the design to be a reality. Here are some library and tools that I used to develop frontend",
-    icon: <FaCode size={30} />,
+    icon: <FaCode size={24} />,
   },
   {
     title: "Automated Testing",
     description:
       "Reliability is important to make a quality product. Implementing automated tests is important to guarantee reliability. Here are some tools that I used for implementing automated test in the frontend",
-    icon: <FaCogs size={30} />,
+    icon: <FaCogs size={24} />,
   },
   {
     title: "Frontend Performance",
     description:
       "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it. Here is some tools and method that i learn to profile and optimize frontend performance",
-    icon: <FaRocket size={30} />,
+    icon: <FaRocket size={24} />,
   },
 ];
 
@@ -143,6 +147,33 @@ const images: ImageProps[] = [
     src:
       "https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61",
     alt: "React Workshop",
+  },
+];
+
+const posts: PostCardProps[] = [
+  {
+    title: "Why Redux Need Immutability",
+    description:
+      "When we working on a redux reducer, we need to make sure that we don’t mutate the previous state object.",
+    href: "https://mnindrazaka.com/why-redux-need-immutability/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/why-reducer-need-immutability.jpeg",
+  },
+  {
+    title: "Optimize Large List Using Windowing",
+    description:
+      "If we want to render a large number of items, for example, 10.000 items, it will take a little time before the items show in the browser. Try to hit the show button below and notice that there is a delay before the items show",
+    href: "https://mnindrazaka.com/optimize-large-list-using-windowing/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/optimize-large-list-using-windowing.jpeg",
+  },
+  {
+    title: "Persisting React State to Local Storage",
+    description:
+      "Last week, I develop a feature that needs to persist state into local storage. Here I want to share with you how I do it. To simplify my explanation, I will use the button counter component for example.",
+    href: "https://mnindrazaka.com/persisting-react-state-to-local-storage/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/persisting-react-state-to-local-storage.jpeg",
   },
 ];
 
@@ -246,7 +277,12 @@ export default function Home() {
         </Stack>
       </SectionContainer>
 
-      <SectionContainer bg="gray.800" paddingY="16" textAlign="center">
+      <SectionContainer
+        bg="gray.800"
+        paddingTop="16"
+        paddingBottom="32"
+        textAlign="center"
+      >
         <Stack marginBottom="8">
           <Heading size="lg" color="white" textAlign="center">
             My Blog Posts
@@ -260,8 +296,16 @@ export default function Home() {
           </Text>
         </Stack>
         <LinkButton href="https://mnindrazaka.com/" colorScheme="purple">
-          See my blog posts
+          See all blog posts
         </LinkButton>
+      </SectionContainer>
+
+      <SectionContainer marginTop="-32">
+        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
+          {posts.map((post) => (
+            <PostCard {...post} key={post.title} />
+          ))}
+        </SimpleGrid>
       </SectionContainer>
 
       <SectionContainer paddingY="16">
