@@ -1,39 +1,82 @@
 import React from "react";
-import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Divider,
+  Flex,
+  Heading,
+  Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
+} from "@chakra-ui/react";
 
 export type SkillCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
+  tools: {
+    category: string;
+    items: { title: string; description: string }[];
+  }[];
 };
 
-const SkillCard = ({ title, description, icon }: SkillCardProps) => (
-  <Flex
-    backgroundColor="white"
-    borderWidth="thin"
-    borderRadius="lg"
-    padding="8"
-    width="100%"
-    height="100%"
-    flexDirection="column"
-    alignItems="center"
-    textAlign="center"
-    boxShadow="md"
-  >
-    <Box
-      display="inline-block"
-      padding="4"
-      marginBottom={4}
+const SkillCard = ({ title, description, icon, tools }: SkillCardProps) => {
+  return (
+    <Flex
+      backgroundColor="white"
       borderWidth="thin"
-      borderRadius="full"
+      borderRadius="lg"
+      padding="4"
+      width="100%"
+      flexDirection="column"
+      alignItems="center"
+      textAlign="center"
+      boxShadow="md"
     >
-      {icon}
-    </Box>
-    <Stack spacing="4" marginBottom="4">
-      <Heading size="md">{title}</Heading>
-      <Text>{description}</Text>
-    </Stack>
-  </Flex>
-);
+      <Box
+        display="inline-block"
+        padding="4"
+        marginBottom={4}
+        borderWidth="thin"
+        borderRadius="full"
+      >
+        {icon}
+      </Box>
+      <Stack spacing="4" marginBottom="4">
+        <Heading size="md">{title}</Heading>
+        <Text>{description}</Text>
+        <Divider marginTop="8" />
+        <Tabs
+          variant="solid-rounded"
+          colorScheme="purple"
+          size="sm"
+          align="center"
+        >
+          <TabList>
+            {tools.map(({ category }) => (
+              <Tab key={category}>{category}</Tab>
+            ))}
+          </TabList>
+
+          <TabPanels>
+            {tools.map(({ category, items }) => (
+              <TabPanel key={category}>
+                {items.map(({ title, description }) => (
+                  <Stack marginTop="4" key={title}>
+                    <Heading size="sm">{title}</Heading>
+                    <Text fontSize="sm">{description}</Text>
+                  </Stack>
+                ))}
+              </TabPanel>
+            ))}
+          </TabPanels>
+        </Tabs>
+      </Stack>
+    </Flex>
+  );
+};
 
 export default SkillCard;

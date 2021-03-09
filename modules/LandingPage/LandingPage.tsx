@@ -3,6 +3,7 @@ import {
   Box,
   ChakraProvider,
   Divider,
+  Grid,
   Heading,
   Image,
   ImageProps,
@@ -33,18 +34,164 @@ const skills: SkillCardProps[] = [
     description:
       "Frontend development is fun because you can translate the design to be a reality. Here are some library and tools that I used to develop frontend",
     icon: <FaCode size={24} />,
+    tools: [
+      {
+        category: "Framework",
+        items: [
+          {
+            title: "React.js",
+            description:
+              "I’m using React because it use one way data binding so I know how the state will changes. It also use JSX to build the UI so I can use my javascript knowledge to build the logic and don’t need to learn the template syntax",
+          },
+          {
+            title: "Next.js",
+            description:
+              "Because I’m using React, I will choose Next.js when I need to deal with server side rendering to improve initial loading performance of the website",
+          },
+        ],
+      },
+      {
+        category: "Static Typing",
+        items: [
+          {
+            title: "Typescript",
+            description:
+              "I use typescript to make sure data structure in my project and avoid runtime error that cause of it",
+          },
+        ],
+      },
+      {
+        category: "Integration",
+        items: [
+          {
+            title: "React Query",
+            description:
+              "I use React query to handling data fetching and mutation to backend. I choose this because its support cache and blablabla",
+          },
+          {
+            title: "Apollo",
+            description:
+              "I’m using Apollo for handling graphql because blablabla",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Automated Testing",
     description:
       "Reliability is important to make a quality product. Implementing automated tests is important to guarantee reliability. Here are some tools that I used for implementing automated test in the frontend",
     icon: <FaCogs size={24} />,
+    tools: [
+      {
+        category: "Unit Testing",
+        items: [
+          {
+            title: "Jest",
+            description: "I choose jest because it already installed in CRA",
+          },
+          {
+            title: "React Testing Library",
+            description:
+              "I choose React testing library to test the React component",
+          },
+          {
+            title: "Chrome Accessibility Tree",
+            description:
+              "To make use of RTL, I need to check the accessibility tree",
+          },
+        ],
+      },
+      {
+        category: "Mocking",
+        items: [
+          {
+            title: "Mock Service Worker",
+            description:
+              " Used for mocking response from backend, I choose this because I can use it when testing or when developing",
+          },
+        ],
+      },
+      {
+        category: "End to End Testing",
+        items: [
+          {
+            title: "Cypress",
+            description:
+              "I use this one because it has good integration with react testing library",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Frontend Performance",
     description:
       "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it. Here is some tools and method that i learn to profile and optimize frontend performance",
     icon: <FaRocket size={24} />,
+    tools: [
+      {
+        category: "Profiling",
+        items: [
+          {
+            title: "React Profiler",
+            description:
+              "I use this tools to find the problem in React rendering",
+          },
+          {
+            title: "Chrome DevTools Network",
+            description:
+              "I use this to inspect the loading performance when web is loaded. I use this to find the waterfall effect",
+          },
+          {
+            title: "Chrome DevTools Performance",
+            description:
+              "I use this to inspect the long time javascript execution",
+          },
+          {
+            title: "Light House",
+            description:
+              "I use this to know the first contentful paint of the website",
+          },
+        ],
+      },
+      {
+        category: "Render Performance",
+        items: [
+          {
+            title: "Memoize Heavy Calculation",
+            description: "I use React.useMemo if there is heavy calculation",
+          },
+          {
+            title: "Memoize Component Render",
+            description: "I use this one to avoid component rerenderedn",
+          },
+          {
+            title: "Memoize Context Value",
+            description:
+              "To avoid context value always changed, we can memoize context value",
+          },
+          {
+            title: "Windowing",
+            description:
+              "Using windowing, I can optimize the render performance of large list. For example in infinite scrolling feature",
+          },
+        ],
+      },
+      {
+        category: "Load Performance",
+        items: [
+          {
+            title: "Code Splitting",
+            description: "i use this to split blablabla",
+          },
+          {
+            title: "Preload Assets",
+            description: "Preload Assets",
+          },
+        ],
+      },
+    ],
   },
 ];
 
@@ -255,11 +402,15 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer marginTop="-32">
-        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
+        <Grid
+          templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(3, 1fr)" }}
+          marginTop="8"
+          gap="4"
+        >
           {skills.map((skill) => (
             <SkillCard {...skill} key={skill.title} />
           ))}
-        </SimpleGrid>
+        </Grid>
       </SectionContainer>
 
       <SectionContainer paddingY="24">

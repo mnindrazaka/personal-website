@@ -30,7 +30,7 @@ const PostCard = ({ title, description, href, imageUrl }: PostCardProps) => {
           <Stack spacing="4">
             <Heading size="md">{title}</Heading>
             <Text noOfLines={2}>{description}</Text>
-            <Button colorScheme="purple" variant="link">
+            <Button colorScheme="purple" variant="ghost">
               Read More
             </Button>
           </Stack>
