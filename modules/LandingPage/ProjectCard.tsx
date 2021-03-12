@@ -35,8 +35,8 @@ const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
       <Divider marginY="4" />
       <Wrap justify="center">
         {tools.map((tool) => (
-          <WrapItem>
-            <Tag size="sm" key={tool} colorScheme="purple" variant="outline">
+          <WrapItem key={tool}>
+            <Tag size="sm" colorScheme="purple" variant="outline">
               {tool}
             </Tag>
           </WrapItem>

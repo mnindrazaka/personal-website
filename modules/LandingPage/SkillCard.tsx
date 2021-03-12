@@ -50,7 +50,7 @@ const SkillCard = ({ title, description, icon, tools }: SkillCardProps) => {
         <Text>{description}</Text>
         <Divider marginTop="8" />
         <Tabs
-          variant="solid-rounded"
+          variant="soft-rounded"
           colorScheme="purple"
           size="sm"
           align="center"

@@ -41,12 +41,12 @@ const skills: SkillCardProps[] = [
           {
             title: "React.js",
             description:
-              "I’m using React because it use one way data binding so I know how the state will changes. It also use JSX to build the UI so I can use my javascript knowledge to build the logic and don’t need to learn the template syntax",
+              "I use React to build a user interface because its use one way data binding to make state changes more predictable. It also use JSX instead of template syntax so I can use my javascript knowledge to build the logic and don’t need to learn the template syntax",
           },
           {
             title: "Next.js",
             description:
-              "Because I’m using React, I will choose Next.js when I need to deal with server side rendering to improve initial loading performance of the website",
+              "I choose Next.js when I need to deal with server side rendering to improve initial loading performance of the website",
           },
         ],
       },
@@ -56,7 +56,7 @@ const skills: SkillCardProps[] = [
           {
             title: "Typescript",
             description:
-              "I use typescript to make sure data structure in my project and avoid runtime error that cause of it",
+              "I use typescript for static typing to construct data structure in my project and help catching typing problem on compile time",
           },
         ],
       },
@@ -66,12 +66,12 @@ const skills: SkillCardProps[] = [
           {
             title: "React Query",
             description:
-              "I use React query to handling data fetching and mutation to backend. I choose this because its support cache and blablabla",
+              "I choose React Query for storing and mutating server state. Server state must be handled differently because it can be out of sync with our application. React Query help me to tackle that problem by using SWR (Stale While Revalidate) method. It also has support for REST API and GRAPHQL",
           },
           {
-            title: "Apollo",
+            title: "GraphQL Code Generator",
             description:
-              "I’m using Apollo for handling graphql because blablabla",
+              "This is a great tool when dealing with GraphQL. It can generate typescript type that reflect the data structure on our GraphQL server. It also can generate custom hook that will tie up React Query and generated typescript type",
           },
         ],
       },
@@ -88,27 +88,28 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Jest",
-            description: "I choose jest because it already installed in CRA",
+            description:
+              "I choose jest because it already installed in Create React App",
           },
           {
             title: "React Testing Library",
             description:
-              "I choose React testing library to test the React component",
+              "The problem that we have when testing frontend is we are too focus to testing implementation detail. This can be cause a problem. I choose React testing library because it help us to get mindset to avoid testing implementation detail",
           },
           {
             title: "Chrome Accessibility Tree",
             description:
-              "To make use of RTL, I need to check the accessibility tree",
+              "To make a good testing, we need to mimic the user in using the application. So, i'm not using data-test-id attribute to get the element that i want to test. Instead, i'm using element accessibility tree to find out the way to get the element",
           },
         ],
       },
       {
-        category: "Mocking",
+        category: "Server Mocking",
         items: [
           {
             title: "Mock Service Worker",
             description:
-              " Used for mocking response from backend, I choose this because I can use it when testing or when developing",
+              "Previously, if i need to test a component that has request to backend, i will mock the return value of javascript featch API. It is hard. Mock service worker help me because it create a mocking server on service worker and prevent the request to get to actual server. Later i can use that mock server in testing or development",
           },
         ],
       },
