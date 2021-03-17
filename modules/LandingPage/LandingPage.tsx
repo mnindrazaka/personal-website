@@ -320,6 +320,15 @@ const images: ImageProps[] = [
 
 const posts: PostCardProps[] = [
   {
+    title: "How React.createElement() works under the hood",
+    description:
+      "After I learn how to develop a frontend using React in Epic React, I want to be able to contribute to React. So I started taking the first steps to be able to contribute, which was understanding the code.",
+    href:
+      "https://mnindrazaka.com/how-react-create-element-works-under-the-hood/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/how-react-create-element-works-under-the-hood.jpeg",
+  },
+  {
     title: "Why Redux Need Immutability",
     description:
       "When we working on a redux reducer, we need to make sure that we don’t mutate the previous state object.",
@@ -342,6 +351,22 @@ const posts: PostCardProps[] = [
     href: "https://mnindrazaka.com/persisting-react-state-to-local-storage/",
     imageUrl:
       "https://mnindrazaka.com/images/post/persisting-react-state-to-local-storage.jpeg",
+  },
+  {
+    title: "Why We Can’t Use If Statement In JSX",
+    description:
+      "When I first started to learn React, i have a case to display an element in JSX based on condition. I started to think “Ok, i want to display this element based on condition, so i am gonna use if statement”. So, my component look like this",
+    href: "https://mnindrazaka.com/why-we-cant-use-if-statement-in-jsx/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/why-we-cant-use-if-statement-in-jsx.jpg",
+  },
+  {
+    title: "How to Enter JSX World Smoothly",
+    description:
+      "One problem that has to be faced by the new engineer when learning about React for the first time is understanding what is JSX and why we need it. When someone asks me to teach them about react, I always hard to explain JSX",
+    href: "https://mnindrazaka.com/how-to-enter-jsx-world-smoothly/",
+    imageUrl:
+      "https://mnindrazaka.com/images/post/how-to-enter-jsx-world-smoothly.jpg",
   },
 ];
 
