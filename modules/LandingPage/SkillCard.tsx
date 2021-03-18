@@ -19,7 +19,7 @@ export type SkillCardProps = {
   icon: React.ReactNode;
   tools: {
     category: string;
-    items: { title: string; description: string }[];
+    items: { title: string; description: React.ReactNode }[];
   }[];
 };
 
