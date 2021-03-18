@@ -119,7 +119,7 @@ const skills: SkillCardProps[] = [
           {
             title: "Cypress",
             description:
-              "I use this one because it has good integration with react testing library",
+              "I use cypress for end to end testing, it help me to simulate the app and catch the integration problem between frontend and backend. I'm also using cypress testing library to get the element that i need to test",
           },
         ],
       },
@@ -128,7 +128,7 @@ const skills: SkillCardProps[] = [
   {
     title: "Frontend Performance",
     description:
-      "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it. Here is some tools and method that i learn to profile and optimize frontend performance",
+      "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it. Here is some tools and method that i learn to profile and optimize frontend performance, espescially in React",
     icon: <FaRocket size={24} />,
     tools: [
       {
@@ -137,22 +137,22 @@ const skills: SkillCardProps[] = [
           {
             title: "React Profiler",
             description:
-              "I use this tools to find the problem in React rendering",
+              "I use React profiler for finding the component that being rerendered too much, So later i can fix that component by memoizing the component render",
           },
           {
             title: "Chrome DevTools Network",
             description:
-              "I use this to inspect the loading performance when web is loaded. I use this to find the waterfall effect",
+              "I use Chrome DevTools Network to understand how the assets is loaded on the web, so i can preload the assets that is needed for initial load",
           },
           {
             title: "Chrome DevTools Performance",
             description:
-              "I use this to inspect the long time javascript execution",
+              "When the FPS of the website is drop, i use this tools to find the problem, it help me to find the function that takes too long to execute",
           },
           {
             title: "Light House",
             description:
-              "I use this to know the first contentful paint of the website",
+              "I use this tools to know how long the website takes to render the first contentful paint. This tools also help me finding common issue that i can fix",
           },
         ],
       },
@@ -160,22 +160,24 @@ const skills: SkillCardProps[] = [
         category: "Render Performance",
         items: [
           {
-            title: "Memoize Heavy Calculation",
-            description: "I use React.useMemo if there is heavy calculation",
+            title: "Memoize Expensive Calculation",
+            description:
+              "if there is an expensive calculation in a component, i can use React.memo to memoize that calculation",
           },
           {
             title: "Memoize Component Render",
-            description: "I use this one to avoid component rerenderedn",
+            description:
+              "Sometimes, there is a component that not needed to be rerenderd, espesially the children under the parent component that often rerendered. So, i can use React.memo to memoize the render so it just rerendered when the props value is changed",
           },
           {
-            title: "Memoize Context Value",
+            title: "Split Setter and Getter of Context Provider",
             description:
-              "To avoid context value always changed, we can memoize context value",
+              "When we use React Context, there is a component that need to consume the function to set the state and not need the state, so when the provider is rerendered, that component is rerenderd too. This can be solve by splitting the Provider into two part, the setter and getter",
           },
           {
             title: "Windowing",
             description:
-              "Using windowing, I can optimize the render performance of large list. For example in infinite scrolling feature",
+              "By using windowing, I can optimize the render performance of large list by just rendering the viewable item to the user. This help to optimize the feature that need to render a huge amount of data, for example in infinite scrolling feature",
           },
         ],
       },
@@ -184,11 +186,13 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Code Splitting",
-            description: "i use this to split blablabla",
+            description:
+              "The bundle of app that we develop can get bigger as the project growth, so we can split the project module into smaller part. So the browser just need to load the code that needed on spesific page",
           },
           {
             title: "Preload Assets",
-            description: "Preload Assets",
+            description:
+              "When there is an asset that will be needed soon in the future, i can preload it, so when the browser need it, it will take a little time to load it from the cache",
           },
         ],
       },
