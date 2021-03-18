@@ -32,7 +32,7 @@ const skills: SkillCardProps[] = [
   {
     title: "Frontend Development",
     description:
-      "Frontend development is fun because you can translate the design to be a reality. Here are some library and tools that I used to develop frontend",
+      "Frontend development is fun because you can translate the design to be a reality.",
     icon: <FaCode size={24} />,
     tools: [
       {
@@ -40,13 +40,26 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "React.js",
-            description:
-              "I use React to build a user interface because its use one way data binding to make state changes more predictable. It also use JSX instead of template syntax so I can use my javascript knowledge to build the logic and don’t need to learn the template syntax",
+            description: (
+              <>
+                My primary development tool is React. I start using React since
+                2017. It uses one-way data binding to make state changes more
+                predictable. It also uses JSX instead of template syntax, so I
+                can use my javascript knowledge to build the logic and don’t
+                need to learn the template syntax
+              </>
+            ),
           },
           {
             title: "Next.js",
-            description:
-              "I choose Next.js when I need to deal with server side rendering to improve initial loading performance of the website",
+            description: (
+              <>
+                React is a great library for client-side rendering. But
+                sometimes we need server-side rendering to improve the initial
+                loading performance of the website and enable SEO. Next.js helps
+                me to implement server-side rendering using React.
+              </>
+            ),
           },
         ],
       },
@@ -55,8 +68,13 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Typescript",
-            description:
-              "I use typescript for static typing to construct data structure in my project and help catching typing problem on compile time",
+            description: (
+              <>
+                Getting runtime error is scary. So I use typescript for static
+                typing to construct data structure in my project and help
+                catching typing problem before runtime
+              </>
+            ),
           },
         ],
       },
@@ -65,13 +83,26 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "React Query",
-            description:
-              "I choose React Query for storing and mutating server state. Server state must be handled differently because it can be out of sync with our application. React Query help me to tackle that problem by using SWR (Stale While Revalidate) method. It also has support for REST API and GRAPHQL",
+            description: (
+              <>
+                I use React Query for storing and mutating server state. Server
+                state must be handled differently because it can be out of sync
+                with our application. React Query help me to tackle that problem
+                by using SWR (Stale While Revalidate) method. Also, It support
+                for REST API and GraphQL
+              </>
+            ),
           },
           {
             title: "GraphQL Code Generator",
-            description:
-              "This is a great tool when dealing with GraphQL. It can generate typescript type that reflect the data structure on our GraphQL server. It also can generate custom hook that will tie up React Query and generated typescript type",
+            description: (
+              <>
+                I love this tool because it can generate typescript types that
+                reflect the data structure on the GraphQL server. It also can
+                generate custom hooks that wrap React Query with suitable
+                typescript type
+              </>
+            ),
           },
         ],
       },
@@ -80,7 +111,7 @@ const skills: SkillCardProps[] = [
   {
     title: "Automated Testing",
     description:
-      "Reliability is important to make a quality product. Implementing automated tests is important to guarantee reliability. Here are some tools that I used for implementing automated test in the frontend",
+      "Reliability is important to make a quality product. Implementing automated tests is important to guarantee reliability",
     icon: <FaCogs size={24} />,
     tools: [
       {
@@ -88,18 +119,25 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Jest",
-            description:
-              "I choose jest because it already installed in Create React App",
+            description: (
+              <>
+                Jest helps me to run the test that I create and provide an
+                overview of the test coverage. It also available by default in
+                Create React App
+              </>
+            ),
           },
           {
             title: "React Testing Library",
-            description:
-              "The problem that we have when testing frontend is we are too focus to testing implementation detail. This can be cause a problem. I choose React testing library because it help us to get mindset to avoid testing implementation detail",
-          },
-          {
-            title: "Chrome Accessibility Tree",
-            description:
-              "To make a good testing, we need to mimic the user in using the application. So, i'm not using data-test-id attribute to get the element that i want to test. Instead, i'm using element accessibility tree to find out the way to get the element",
+            description: (
+              <>
+                I choose React Testing Library to test my component. The thing
+                that I love about this tool is it encourages us to use the
+                accessibility tree to access the component and trigger an event
+                to test state changes. So it can mimic how the user will use our
+                component
+              </>
+            ),
           },
         ],
       },
@@ -108,8 +146,15 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Mock Service Worker",
-            description:
-              "Previously, if i need to test a component that has request to backend, i will mock the return value of javascript featch API. It is hard. Mock service worker help me because it create a mocking server on service worker and prevent the request to get to actual server. Later i can use that mock server in testing or development",
+            description: (
+              <>
+                I use MSW if I need to test a component that makes a request to
+                the backend. MSW can intercept the request and giving a mocked
+                response that suits my test case. The mocked response can also
+                be used when I develop a frontend but the backend is not ready
+                yet
+              </>
+            ),
           },
         ],
       },
@@ -118,8 +163,14 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Cypress",
-            description:
-              "I use cypress for end to end testing, it help me to simulate the app and catch the integration problem between frontend and backend. I'm also using cypress testing library to get the element that i need to test",
+            description: (
+              <>
+                The end to end test is good for testing the integration between
+                the frontend and backend. I use cypress for the end to end
+                testing, it help me to simulate the app and catch the
+                integration problem.
+              </>
+            ),
           },
         ],
       },
@@ -128,7 +179,7 @@ const skills: SkillCardProps[] = [
   {
     title: "Frontend Performance",
     description:
-      "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it. Here is some tools and method that i learn to profile and optimize frontend performance, espescially in React",
+      "Performance is the art of avoiding work, it is so fun to find unnecessary work and optimize it.",
     icon: <FaRocket size={24} />,
     tools: [
       {
@@ -136,48 +187,25 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "React Profiler",
-            description:
-              "I use React profiler for finding the component that being rerendered too much, So later i can fix that component by memoizing the component render",
-          },
-          {
-            title: "Chrome DevTools Network",
-            description:
-              "I use Chrome DevTools Network to understand how the assets is loaded on the web, so i can preload the assets that is needed for initial load",
+            description: (
+              <>
+                React profiler helps me for finding the component that being
+                rerendered too much, So later I can fix that component by
+                memoize the component render
+              </>
+            ),
           },
           {
             title: "Chrome DevTools Performance",
-            description:
-              "When the FPS of the website is drop, i use this tools to find the problem, it help me to find the function that takes too long to execute",
-          },
-          {
-            title: "Light House",
-            description:
-              "I use this tools to know how long the website takes to render the first contentful paint. This tools also help me finding common issue that i can fix",
-          },
-        ],
-      },
-      {
-        category: "Render Performance",
-        items: [
-          {
-            title: "Memoize Expensive Calculation",
-            description:
-              "if there is an expensive calculation in a component, i can use React.memo to memoize that calculation",
-          },
-          {
-            title: "Memoize Component Render",
-            description:
-              "Sometimes, there is a component that not needed to be rerenderd, espesially the children under the parent component that often rerendered. So, i can use React.memo to memoize the render so it just rerendered when the props value is changed",
-          },
-          {
-            title: "Split Setter and Getter of Context Provider",
-            description:
-              "When we use React Context, there is a component that need to consume the function to set the state and not need the state, so when the provider is rerendered, that component is rerenderd too. This can be solve by splitting the Provider into two part, the setter and getter",
-          },
-          {
-            title: "Windowing",
-            description:
-              "By using windowing, I can optimize the render performance of large list by just rendering the viewable item to the user. This help to optimize the feature that need to render a huge amount of data, for example in infinite scrolling feature",
+            description: (
+              <>
+                When the FPS of the website drops, I use this tool to find the
+                problem, it helps me to find the task that takes too long to
+                execute. It also can profile the loading performance of the
+                website, giving an overview of how the sequence of assets is
+                loaded, and showing when the first contentful paint happens
+              </>
+            ),
           },
         ],
       },
@@ -186,13 +214,63 @@ const skills: SkillCardProps[] = [
         items: [
           {
             title: "Code Splitting",
-            description:
-              "The bundle of app that we develop can get bigger as the project growth, so we can split the project module into smaller part. So the browser just need to load the code that needed on spesific page",
+            description: (
+              <>
+                The bundle of the app can get bigger as the project grows, so we
+                can split the project module into smaller parts. So the browser
+                just load the code that needed on a specific page
+              </>
+            ),
           },
           {
             title: "Preload Assets",
-            description:
-              "When there is an asset that will be needed soon in the future, i can preload it, so when the browser need it, it will take a little time to load it from the cache",
+            description: (
+              <>
+                When there is an asset that will be needed soon in the future, i
+                can preload it, so when the browser needs it, it will take a
+                little time to load the asset from the cache
+              </>
+            ),
+          },
+        ],
+      },
+      {
+        category: "Render Performance",
+        items: [
+          {
+            title: "Memoization",
+            description: (
+              <>
+                if there is an expensive calculation in a component, I will
+                memoize that calculation to improve the execution time.
+                Memoization can also be used if there is a component that
+                rerendered unnecessarily
+              </>
+            ),
+          },
+          {
+            title: "Split Context Provider",
+            description: (
+              <>
+                The states in a provider can be so many as the project grows.
+                One update in a provider can trigger rerender in many
+                components. So, we can split the provider into smaller parts. I
+                usually split the provider by domain. if that's not enough to
+                solve the problem, I will split it again into setter and getter
+                provider
+              </>
+            ),
+          },
+          {
+            title: "Windowing",
+            description: (
+              <>
+                By using windowing, I can optimize the render performance of a
+                large list by just rendering the viewable item to the user. This
+                help to optimize the feature that needs to render a huge amount
+                of data, for example in the infinite scrolling feature
+              </>
+            ),
           },
         ],
       },
@@ -420,7 +498,7 @@ export default function Home() {
             My Frontend Engineering Journey
           </Heading>
           <Text color="white" textAlign="center">
-            I start my journey as a frontend engineer in 2018. I start by
+            I start my journey as a frontend engineer in 2017. I start by
             deepening my javascript skill and doing some side projects. In 2019
             I take an internship in a startup company. Then I work on some
             freelance projects and get my first full-time job as a frontend
@@ -545,7 +623,10 @@ export default function Home() {
             justifyContent="center"
           >
             {socialMedias.map((socialMedia) => (
-              <SocialMediaButton {...socialMedia} key={socialMedia.title} />
+              <SocialMediaButton
+                {...socialMedia}
+                key={socialMedia["aria-label"]}
+              />
             ))}
           </Stack>
         </Stack>
