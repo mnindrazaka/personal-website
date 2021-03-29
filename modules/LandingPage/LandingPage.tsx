@@ -46,7 +46,7 @@ const skills: SkillCardProps[] = [
     icon: <FaCode size={24} />,
     tools: [
       {
-        category: "Framework",
+        category: "Development Tools",
         items: [
           {
             title: "React.js",
@@ -71,11 +71,6 @@ const skills: SkillCardProps[] = [
               </>
             ),
           },
-        ],
-      },
-      {
-        category: "Static Typing",
-        items: [
           {
             title: "Typescript",
             description: (
@@ -149,11 +144,6 @@ const skills: SkillCardProps[] = [
               </>
             ),
           },
-        ],
-      },
-      {
-        category: "Server Mocking",
-        items: [
           {
             title: "Mock Service Worker",
             description: (
@@ -206,7 +196,7 @@ const skills: SkillCardProps[] = [
             ),
           },
           {
-            title: "Chrome DevTools Performance",
+            title: "Chrome DevTools",
             description: (
               <>
                 When the FPS of the website drops, I use this tool to find the
@@ -220,7 +210,7 @@ const skills: SkillCardProps[] = [
         ],
       },
       {
-        category: "Load Performance",
+        category: "Optimization",
         items: [
           {
             title: "Code Splitting",
@@ -242,11 +232,6 @@ const skills: SkillCardProps[] = [
               </>
             ),
           },
-        ],
-      },
-      {
-        category: "Render Performance",
-        items: [
           {
             title: "Memoization",
             description: (
@@ -428,8 +413,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SectionContainer paddingY="24">
-        <Grid templateColumns="1fr 2fr 1fr" columnGap="8">
+        <Grid
+          justifyItems={{ base: "center", lg: "flex-start" }}
+          templateColumns={{ base: "1fr", lg: "1.5fr 2fr 1fr" }}
+          textAlign={{ base: "center", lg: "left" }}
+          gap="8"
+        >
           <Image
+            borderWidth="medium"
+            borderColor="gray.800"
+            borderStyle="solid"
             borderRadius="full"
             boxSize="200px"
             fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
@@ -491,7 +484,10 @@ export default function Home() {
 
       <SectionContainer marginTop="-32">
         <Grid
-          templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
+          templateColumns={{
+            base: "1fr",
+            lg: "repeat(3, 1fr)",
+          }}
           marginTop="8"
           gap="4"
         >
@@ -502,7 +498,7 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer paddingY="24">
-        <Grid templateColumns="1fr 1.5fr" columnGap="8">
+        <Grid templateColumns={{ base: "1fr", lg: "1fr 1.5fr" }} columnGap="8">
           <Grid templateColumns="repeat(2, 1fr)" gap="2">
             <GridItem
               borderTopLeftRadius="lg"
@@ -510,6 +506,7 @@ export default function Home() {
               colSpan={2}
               bgImage="url('https://lh3.googleusercontent.com/pw/ACtC-3femVHb8s_m0chY-bJA9zxOosSdw0mlNB1vlj86bb5gz9WASCgJAiakA7xmGDZOP7XugkA1-fPrmXPzQ6pHvZX0O1mmCl1HdCy6_fc5oqHwtmYtn4yZCGHg7Gbrl3KtoJRFHW6sXVcf6KtZwKYmiX5-=w2190-h1642-no?authuser=0')"
               bgSize="cover"
+              bgPosition="right"
             ></GridItem>
             <GridItem
               bgImage="url('https://i.ibb.co/k6shGS1/afff1c2a-02ab-48d9-821c-8f94dbc734c5.jpg')"
@@ -524,7 +521,7 @@ export default function Home() {
               borderBottomRightRadius="lg"
             ></GridItem>
           </Grid>
-          <Stack spacing="8">
+          <Stack spacing="8" textAlign={{ base: "center", lg: "left" }}>
             <Heading size="xl">Learning and Teaching</Heading>
             <Text>
               I love to learn and teach what I know in the community. The
@@ -546,9 +543,19 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer paddingY="24" bg="gray.800" color="white">
-        <Grid templateColumns="1fr 1fr" columnGap="16" alignItems="center">
-          <Stack spacing="8">
-            <Heading size="xl">Lentera</Heading>
+        <Grid
+          templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }}
+          columnGap="16"
+          alignItems="center"
+        >
+          <Stack spacing="8" textAlign={{ base: "center", lg: "left" }}>
+            <Stack spacing="4">
+              <Heading size="xl">Lentera</Heading>
+              <Heading size="md" fontWeight="normal">
+                Learn Coding Skill Faster and Understand Better
+              </Heading>
+            </Stack>
+            <Divider />
             <Text>
               When I teach, I give a brief explanation of the topic, then I give
               a problem related to that topic. After the students struggle with
@@ -561,7 +568,6 @@ export default function Home() {
 
             <LinkButton
               href="https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629"
-              inlineSize="sm"
               colorScheme="purple"
             >
               See Lentera
@@ -569,6 +575,7 @@ export default function Home() {
           </Stack>
 
           <Image
+            display={{ base: "none", lg: "block" }}
             fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             src={require("./professor.svg")}
             alt="teaching"
@@ -590,7 +597,11 @@ export default function Home() {
 
         <Divider marginY="8" />
 
-        <Grid templateColumns="repeat(3, 1fr)" gap={8} justifyContent="center">
+        <Grid
+          templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
+          gap={8}
+          justifyContent="center"
+        >
           {projects.map((project) => (
             <ProjectCard {...project} key={project.title} />
           ))}

@@ -1,24 +1,15 @@
 import React from "react";
-import {
-  Box,
-  Divider,
-  Heading,
-  Link,
-  Tag,
-  Text,
-  Wrap,
-  WrapItem,
-} from "@chakra-ui/react";
+import { Divider, Flex, Heading, Link, Text } from "@chakra-ui/react";
+import LinkButton from "./LinkButton";
 
 export type ProjectCardProps = {
   title: string;
   description: string;
   href: string;
-  tools?: string[];
 };
-const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
+const ProjectCard = ({ title, description, href }: ProjectCardProps) => (
   <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
-    <Box
+    <Flex
       borderWidth="thin"
       borderRadius="lg"
       padding="8"
@@ -26,22 +17,20 @@ const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
       height="100%"
       boxShadow="md"
       backgroundColor="white"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="space-between"
     >
       <Heading size="md" textAlign="center">
         {title}
       </Heading>
       <Divider marginY="4" />
       <Text textAlign="center">{description}</Text>
-      <Wrap justify="center">
-        {tools?.map((tool) => (
-          <WrapItem key={tool}>
-            <Tag size="sm" colorScheme="purple" variant="outline">
-              {tool}
-            </Tag>
-          </WrapItem>
-        ))}
-      </Wrap>
-    </Box>
+      <Divider marginY="4" />
+      <LinkButton href={href} colorScheme="purple">
+        See Project
+      </LinkButton>
+    </Flex>
   </Link>
 );
 
