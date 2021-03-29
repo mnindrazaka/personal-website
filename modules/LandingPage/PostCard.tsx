@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Button, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Heading,
+  Link,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
 
 export type PostCardProps = {
   title: string;
@@ -9,10 +17,12 @@ export type PostCardProps = {
 };
 
 const PostCard = ({ title, description, href, imageUrl }: PostCardProps) => {
+  const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <Link href={href} borderRadius="lg" _hover={{ textDecoration: "none" }}>
       <Box
-        backgroundColor="white"
+        backgroundColor={backgroundColor}
+        borderWidth="thin"
         borderRadius="lg"
         boxShadow="md"
         width="100%"

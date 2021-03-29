@@ -1,19 +1,23 @@
+import React from "react";
 import Head from "next/head";
 import {
   Box,
-  Button,
-  ChakraProvider,
   Divider,
-  Flex,
   Grid,
   GridItem,
   Heading,
   Image,
-  ImageProps,
-  Link,
   SimpleGrid,
   Stack,
   Text,
+  useColorMode,
+  Switch,
+  FormControl,
+  FormLabel,
+  Flex,
+  useColorModeValue,
+  IconButton,
+  Tooltip,
 } from "@chakra-ui/react";
 import {
   FaChalkboardTeacher,
@@ -24,7 +28,9 @@ import {
   FaGithub,
   FaGlobeAmericas,
   FaLinkedin,
+  FaMoon,
   FaRocket,
+  FaSun,
   FaTwitter,
   FaUsers,
 } from "react-icons/fa";
@@ -406,13 +412,42 @@ const posts: PostCardProps[] = [
 ];
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const menuBackgroundColor = useColorModeValue("white", "gray.900");
   return (
-    <ChakraProvider>
+    <>
       <Head>
         <title>M. Nindra Zaka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <SectionContainer paddingY="24">
+      <Flex
+        boxShadow="md"
+        paddingY="4"
+        paddingX="8"
+        justifyContent="space-between"
+        alignItems="center"
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        backgroundColor={menuBackgroundColor}
+        zIndex="sticky"
+      >
+        <Heading size="md">M. Nindra Zaka</Heading>
+        <Tooltip
+          label={
+            colorMode === "dark" ? "Active light mode" : "Active dark mode"
+          }
+        >
+          <IconButton
+            icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+            aria-label="colorMode"
+            onClick={toggleColorMode}
+            borderRadius="full"
+          />
+        </Tooltip>
+      </Flex>
+      <SectionContainer paddingY="24" marginTop="16">
         <Grid
           justifyItems={{ base: "center", lg: "flex-start" }}
           templateColumns={{ base: "1fr", lg: "1.5fr 2fr 1fr" }}
@@ -542,7 +577,7 @@ export default function Home() {
         </Grid>
       </SectionContainer>
 
-      <SectionContainer paddingY="24" bg="gray.800" color="white">
+      <SectionContainer paddingY="24" bg="gray.900" color="white">
         <Grid
           templateColumns={{ base: "1fr", lg: "repeat(2, 1fr)" }}
           columnGap="16"
@@ -598,7 +633,11 @@ export default function Home() {
         <Divider marginY="8" />
 
         <Grid
-          templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
           gap={8}
           justifyContent="center"
         >
@@ -609,7 +648,7 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer
-        bg="gray.800"
+        bg="gray.900"
         paddingTop="16"
         paddingBottom="32"
         textAlign="center"
@@ -632,14 +671,22 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer marginTop="-32" paddingBottom="16">
-        <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
+        <Grid
+          templateColumns={{
+            base: "1fr",
+            md: "repeat(2, 1fr)",
+            lg: "repeat(3, 1fr)",
+          }}
+          marginTop="8"
+          gap="8"
+        >
           {posts.map((post) => (
             <PostCard {...post} key={post.title} />
           ))}
-        </SimpleGrid>
+        </Grid>
       </SectionContainer>
 
-      <SectionContainer bg="gray.800" paddingY="16">
+      <SectionContainer bg="gray.900" paddingY="16">
         <Stack>
           <Heading size="lg" color="white" textAlign="center">
             That's it
@@ -668,6 +715,6 @@ export default function Home() {
           Copyright &copy; 2021 M. Nindra Zaka
         </Text>
       </SectionContainer>
-    </ChakraProvider>
+    </>
   );
 }

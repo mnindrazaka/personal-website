@@ -16,6 +16,7 @@ import {
   TabPanels,
   Tabs,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 export type SkillCardProps = {
@@ -29,9 +30,10 @@ export type SkillCardProps = {
 };
 
 const SkillCard = ({ title, description, icon, tools }: SkillCardProps) => {
+  const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <Flex
-      backgroundColor="white"
+      backgroundColor={backgroundColor}
       borderWidth="thin"
       borderRadius="lg"
       padding="4"
