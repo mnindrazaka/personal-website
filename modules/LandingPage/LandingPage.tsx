@@ -1,30 +1,40 @@
 import Head from "next/head";
 import {
   Box,
+  Button,
   ChakraProvider,
   Divider,
+  Flex,
   Grid,
+  GridItem,
   Heading,
   Image,
   ImageProps,
+  Link,
   SimpleGrid,
   Stack,
   Text,
 } from "@chakra-ui/react";
 import {
+  FaChalkboardTeacher,
   FaCode,
   FaCogs,
   FaEnvelope,
   FaFacebook,
   FaGithub,
+  FaGlobeAmericas,
   FaLinkedin,
   FaRocket,
   FaTwitter,
+  FaUsers,
 } from "react-icons/fa";
 import SectionContainer from "./SectionContainer";
 import SkillCard, { SkillCardProps } from "./SkillCard";
 import LinkButton from "./LinkButton";
 import ProjectCard, { ProjectCardProps } from "./ProjectCard";
+import ProjectCardHorizontal, {
+  ProjectCardHorizontalProps,
+} from "./ProjectCardHorizontal";
 import SocialMediaButton, { SocialMediaButtonProps } from "./SocialMediaButton";
 import PostCard, { PostCardProps } from "./PostCard";
 
@@ -278,80 +288,55 @@ const skills: SkillCardProps[] = [
   },
 ];
 
-const projects: ProjectCardProps[] = [
+const wriProjects: ProjectCardHorizontalProps[] = [
   {
-    title: "Lentera",
-    description:
-      "Online course platform that will give you a guided struggle to learn engineering skill faster and understand better",
-    href:
-      "https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629",
-    tools: [
-      "Next.js",
-      "Typescript",
-      "Apollo",
-      "Hasura",
-      "Auth0",
-      "React Testing Library",
-      "Ant Design",
-    ],
+    title: "Miniclass Web",
+    description: `I teach about Node.js and React on workshop riset
+    informatika to help first year student deepening web
+    development skill that they get from lectures. Here is
+    my learning roadmap that i use for teaching`,
+    href: "https://github.com/wrideveloper/miniclass-web/",
+    icon: <FaChalkboardTeacher size="24" />,
   },
   {
-    title: "Code Send",
-    description:
-      "Hot code update platform to distribute update on react native application faster",
-    href:
-      "https://github.com/mnindrazaka/code-send/tree/master/code-send-plugin",
-    tools: [
-      "React.js",
-      "React Native",
-      "Node.js",
-      "Typescript",
-      "Cypress",
-      "Ant Design",
-    ],
-  },
-  {
-    title: "WRI Website",
-    description:
-      "Workshop Riset Informatika is IT Community in State Polytechnic of Malang. I create a community profile website to introduce it to the other community",
+    title: "WRI Web Profile",
+    description: `Back in 2016, Workshop Riset Informatika is a new community in state polytechnic of malang, So i create a landing page to introduce the community to the other community, so they can collabs together`,
     href: "http://wri.polinema.ac.id/",
-    tools: ["React.js", "Semantic UI"],
-  },
-  {
-    title: "Crudone",
-    description: "crud ? done ! react component for easy crud",
-    href: "https://www.npmjs.com/package/crudone",
-    tools: ["React.js", "Typescript", "Compound Component"],
+    icon: <FaGlobeAmericas size="24" />,
   },
   {
     title: "Crew Monitoring",
-    description: "Community Crew Monitoring",
+    description: `Day by day, the crew of workshop & riset informatika are increasing, So i create a platform to list the crew of the community. it can also help me to make attendance to the bootcamp participants`,
     href: "https://github.com/wrideveloper/crew-monitoring",
-    tools: ["React.js", "Typescript", "Semantic UI", "Crudone"],
+    icon: <FaUsers size="24" />,
+  },
+];
+
+const projects: ProjectCardProps[] = [
+  {
+    title: "Crudone",
+    description: "crud ? done ! React component for easy crud",
+    href: "https://www.npmjs.com/package/crudone",
   },
   {
     title: "React Async Handler",
     description: "React hook for handling asynchronous task",
     href: "https://www.npmjs.com/package/react-async-handler",
-    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Debounce Effect",
     description: "React use effect hook but with debounce",
     href: "https://www.npmjs.com/package/react-debounce-effect",
-    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Local Storage State",
     description: "React hook for persisting React state to local storage",
     href: "https://www.npmjs.com/package/react-local-storage-state",
-    tools: ["React.js", "Typescript", "React Testing Library"],
   },
   {
     title: "React Switch State",
     description: "React hook for switching state on and off",
     href: "https://www.npmjs.com/package/react-switch-state",
-    tools: ["React.js", "Typescript", "React Testing Library"],
   },
 ];
 
@@ -380,23 +365,6 @@ const socialMedias: SocialMediaButtonProps[] = [
     href: "https://www.facebook.com/mnindrazaka/",
     "aria-label": "facebook",
     icon: <FaFacebook />,
-  },
-];
-
-const images: ImageProps[] = [
-  {
-    src:
-      "https://lh3.googleusercontent.com/pw/ACtC-3femVHb8s_m0chY-bJA9zxOosSdw0mlNB1vlj86bb5gz9WASCgJAiakA7xmGDZOP7XugkA1-fPrmXPzQ6pHvZX0O1mmCl1HdCy6_fc5oqHwtmYtn4yZCGHg7Gbrl3KtoJRFHW6sXVcf6KtZwKYmiX5-=w2190-h1642-no?authuser=0",
-    alt: "Node.js Research 2018",
-  },
-  {
-    src: "https://i.ibb.co/X2t4kpw/ed3b79ff-0e48-48fd-9a83-ebf91edb4253.jpg",
-    alt: "Compound Component Talk",
-  },
-  {
-    src:
-      "https://scontent.fmlg1-1.fna.fbcdn.net/v/t1.0-9/89245852_2604227906516348_8843879661566951424_o.jpg?_nc_cat=100&ccb=3&_nc_sid=b9115d&_nc_eui2=AeGHm9yI8F1fmmI9BVPZ2gPPFHQn4M3Yh6gUdCfgzdiHqJ-xr_0fPmNOfNWnxM1QOtb83pCW76KGLdoBOnQC1iil&_nc_ohc=vs2enyq1DYAAX_eOc97&_nc_ht=scontent.fmlg1-1.fna&oh=c1bf137879959170741d9281fc872354&oe=605BDC61",
-    alt: "React Workshop",
   },
 ];
 
@@ -460,11 +428,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <SectionContainer paddingY="24">
-        <Stack direction={{ base: "column", lg: "row" }} spacing="12">
+        <Grid templateColumns="1fr 2fr 1fr" columnGap="8">
           <Image
-            marginX={{ base: "auto", lg: "0" }}
             borderRadius="full"
-            boxSize="150px"
+            boxSize="200px"
             fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
             src="https://media-exp1.licdn.com/dms/image/C5603AQF_RgE0dAzCsw/profile-displayphoto-shrink_800_800/0/1591972651641?e=1619654400&v=beta&t=cdT0c9ntyOimTHYufrjwfrl8ReqDXX73U0tFJf46yN8"
             alt="M. Nindra Zaka"
@@ -489,7 +456,20 @@ export default function Home() {
               to grow together
             </Text>
           </Stack>
-        </Stack>
+          <GridItem>
+            <Heading size="md">Find me on</Heading>
+            <Divider marginY="4" />
+            <Stack direction="row">
+              {socialMedias.map((socialMedia) => (
+                <SocialMediaButton
+                  {...socialMedia}
+                  mode="light"
+                  key={socialMedia["aria-label"]}
+                />
+              ))}
+            </Stack>
+          </GridItem>
+        </Grid>
       </SectionContainer>
 
       <SectionContainer bg="purple.600" paddingBottom="32" paddingTop="16">
@@ -511,7 +491,7 @@ export default function Home() {
 
       <SectionContainer marginTop="-32">
         <Grid
-          templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(3, 1fr)" }}
+          templateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
           marginTop="8"
           gap="4"
         >
@@ -522,38 +502,99 @@ export default function Home() {
       </SectionContainer>
 
       <SectionContainer paddingY="24">
-        <Stack spacing="8" textAlign="center">
-          <Heading size="lg">Learning and Teaching</Heading>
-          <Text>
-            I love to learn and teach what I know in the community. I contribute
-            as a meetup speaker, workshop mentor, and facilitator. The amazing
-            thing that I love about teaching is it not only helps others to grow
-            but also solidifying what I just learned and deepening my
-            understanding. I create a roadmap that I use to teach about web
-            development
+        <Grid templateColumns="1fr 1.5fr" columnGap="8">
+          <Grid templateColumns="repeat(2, 1fr)" gap="2">
+            <GridItem
+              borderTopLeftRadius="lg"
+              borderTopRightRadius="lg"
+              colSpan={2}
+              bgImage="url('https://lh3.googleusercontent.com/pw/ACtC-3femVHb8s_m0chY-bJA9zxOosSdw0mlNB1vlj86bb5gz9WASCgJAiakA7xmGDZOP7XugkA1-fPrmXPzQ6pHvZX0O1mmCl1HdCy6_fc5oqHwtmYtn4yZCGHg7Gbrl3KtoJRFHW6sXVcf6KtZwKYmiX5-=w2190-h1642-no?authuser=0')"
+              bgSize="cover"
+            ></GridItem>
+            <GridItem
+              bgImage="url('https://i.ibb.co/k6shGS1/afff1c2a-02ab-48d9-821c-8f94dbc734c5.jpg')"
+              bgPosition="center"
+              bgSize="cover"
+              borderBottomLeftRadius="lg"
+            ></GridItem>
+            <GridItem
+              bgImage="url('https://i.ibb.co/X2t4kpw/ed3b79ff-0e48-48fd-9a83-ebf91edb4253.jpg')"
+              bgSize="cover"
+              bgPosition="left"
+              borderBottomRightRadius="lg"
+            ></GridItem>
+          </Grid>
+          <Stack spacing="8">
+            <Heading size="xl">Learning and Teaching</Heading>
+            <Text>
+              I love to learn and teach what I know in the community. The
+              amazing thing that I love about teaching is it not only helps
+              others to grow but also solidifying what I just learned and
+              deepening my understanding. I mostly teach about web development
+              in workshop riset informatika, the IT community at State
+              Polytechnic of Malang. Here is some contribution that I make in
+              workshop riset informatika
+            </Text>
+
+            <Grid templateColumns="repeat(1, 1fr)" gap={8}>
+              {wriProjects.map((project) => (
+                <ProjectCardHorizontal key={project.title} {...project} />
+              ))}
+            </Grid>
+          </Stack>
+        </Grid>
+      </SectionContainer>
+
+      <SectionContainer paddingY="24" bg="gray.800" color="white">
+        <Grid templateColumns="1fr 1fr" columnGap="16" alignItems="center">
+          <Stack spacing="8">
+            <Heading size="xl">Lentera</Heading>
+            <Text>
+              When I teach, I give a brief explanation of the topic, then I give
+              a problem related to that topic. After the students struggle with
+              the problem, I will show them how to solve it. I avoid giving the
+              solution in the beginning. I want them to struggle to find the
+              solution first. Struggling will help them to understand the
+              solution that I will give later. I develop a learning platform
+              called Lentera to help me teaching with that kind of experience.
+            </Text>
+
+            <LinkButton
+              href="https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629"
+              inlineSize="sm"
+              colorScheme="purple"
+            >
+              See Lentera
+            </LinkButton>
+          </Stack>
+
+          <Image
+            fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+            src={require("./professor.svg")}
+            alt="teaching"
+          />
+        </Grid>
+      </SectionContainer>
+
+      <SectionContainer paddingY="16">
+        <Stack>
+          <Heading size="lg" textAlign="center">
+            Tools and Library
+          </Heading>
+          <Text textAlign="center">
+            When developing some projects, I found myself often implement the
+            same logic again and again, so I separate it and make a library from
+            it.
           </Text>
-          <LinkButton
-            href="https://github.com/wrideveloper/miniclass-web/"
-            colorScheme="purple"
-          >
-            See learning roadmap
-          </LinkButton>
-          <SimpleGrid
-            display={{ base: "none", sm: "grid" }}
-            columns={3}
-            spacing="8"
-          >
-            {images.map((image) => (
-              <Image
-                {...image}
-                key={image.alt}
-                width="100%"
-                height="100%"
-                borderRadius="lg"
-              />
-            ))}
-          </SimpleGrid>
         </Stack>
+
+        <Divider marginY="8" />
+
+        <Grid templateColumns="repeat(3, 1fr)" gap={8} justifyContent="center">
+          {projects.map((project) => (
+            <ProjectCard {...project} key={project.title} />
+          ))}
+        </Grid>
       </SectionContainer>
 
       <SectionContainer
@@ -579,32 +620,10 @@ export default function Home() {
         </LinkButton>
       </SectionContainer>
 
-      <SectionContainer marginTop="-32">
+      <SectionContainer marginTop="-32" paddingBottom="16">
         <SimpleGrid columns={{ base: 1, lg: 3 }} marginTop="8" spacing="8">
           {posts.map((post) => (
             <PostCard {...post} key={post.title} />
-          ))}
-        </SimpleGrid>
-      </SectionContainer>
-
-      <SectionContainer paddingY="16">
-        <Stack>
-          <Heading size="lg" textAlign="center">
-            My Recent Works
-          </Heading>
-          <Text textAlign="center">
-            I implement what I learn by creating a side project. It will help me
-            prove what I learn. When developing some projects, I found myself
-            often implement the same logic again and again, so I separate it and
-            make a library from it. Here are my recent works
-          </Text>
-        </Stack>
-
-        <Divider marginY="8" />
-
-        <SimpleGrid columns={{ base: 1, lg: 3 }} spacing="8">
-          {projects.map((project) => (
-            <ProjectCard {...project} key={project.title} />
           ))}
         </SimpleGrid>
       </SectionContainer>
@@ -625,6 +644,7 @@ export default function Home() {
             {socialMedias.map((socialMedia) => (
               <SocialMediaButton
                 {...socialMedia}
+                mode="dark"
                 key={socialMedia["aria-label"]}
               />
             ))}

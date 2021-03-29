@@ -14,7 +14,7 @@ export type ProjectCardProps = {
   title: string;
   description: string;
   href: string;
-  tools: string[];
+  tools?: string[];
 };
 const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
   <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
@@ -32,9 +32,8 @@ const ProjectCard = ({ title, description, href, tools }: ProjectCardProps) => (
       </Heading>
       <Divider marginY="4" />
       <Text textAlign="center">{description}</Text>
-      <Divider marginY="4" />
       <Wrap justify="center">
-        {tools.map((tool) => (
+        {tools?.map((tool) => (
           <WrapItem key={tool}>
             <Tag size="sm" colorScheme="purple" variant="outline">
               {tool}
