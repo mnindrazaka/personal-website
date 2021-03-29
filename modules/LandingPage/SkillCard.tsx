@@ -1,5 +1,10 @@
 import React from "react";
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
   Divider,
   Flex,
@@ -64,12 +69,23 @@ const SkillCard = ({ title, description, icon, tools }: SkillCardProps) => {
           <TabPanels>
             {tools.map(({ category, items }) => (
               <TabPanel key={category}>
-                {items.map(({ title, description }) => (
-                  <Stack marginTop="4" key={title}>
-                    <Heading size="sm">{title}</Heading>
-                    <Text fontSize="sm">{description}</Text>
-                  </Stack>
-                ))}
+                <Accordion allowMultiple>
+                  {items.map(({ title, description }) => (
+                    <AccordionItem key={title}>
+                      <AccordionButton>
+                        <Stack direction="row">
+                          <AccordionIcon />
+                          <Heading size="xs">{title}</Heading>
+                        </Stack>
+                      </AccordionButton>
+                      <AccordionPanel>
+                        <Text fontSize="sm" textAlign="left">
+                          {description}
+                        </Text>
+                      </AccordionPanel>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </TabPanel>
             ))}
           </TabPanels>

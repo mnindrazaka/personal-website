@@ -1,5 +1,6 @@
 import { Box, Flex, Grid, Heading, Link, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
+import LinkButton from "./LinkButton";
 
 export type ProjectCardHorizontalProps = {
   title: string;
@@ -25,7 +26,12 @@ const ProjectCardHorizontal = ({
         boxShadow="md"
         backgroundColor="white"
       >
-        <Grid alignItems="center" templateColumns="1fr 8fr" columnGap="8">
+        <Grid
+          alignItems="center"
+          templateColumns={{ base: "1fr", lg: "1fr 8fr" }}
+          gap="8"
+          justifyItems="center"
+        >
           <Flex
             borderWidth="thin"
             justifyContent="center"
@@ -35,9 +41,12 @@ const ProjectCardHorizontal = ({
           >
             {icon}
           </Flex>
-          <Stack>
+          <Stack spacing="4">
             <Heading size="md">{title}</Heading>
             <Text fontSize="sm">{description}</Text>
+            <LinkButton href={href} colorScheme="purple">
+              See Project
+            </LinkButton>
           </Stack>
         </Grid>
       </Box>
