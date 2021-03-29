@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Flex, Grid, Heading, Link, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
 import LinkButton from "./LinkButton";
@@ -15,6 +16,7 @@ const ProjectCardHorizontal = ({
   icon,
   href,
 }: ProjectCardHorizontalProps) => {
+  const backgroundColor = useColorModeValue("white", "gray.900");
   return (
     <Link href={href} _hover={{ textDecoration: "none" }} borderRadius="lg">
       <Box
@@ -24,7 +26,7 @@ const ProjectCardHorizontal = ({
         width="100%"
         height="100%"
         boxShadow="md"
-        backgroundColor="white"
+        backgroundColor={backgroundColor}
       >
         <Grid
           alignItems="center"
