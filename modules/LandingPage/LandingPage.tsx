@@ -283,7 +283,7 @@ const wriProjects: ProjectCardHorizontalProps[] = [
   {
     title: "Miniclass Web",
     description: `I teach about Node.js and React on workshop riset
-    informatika to help first year student deepening web
+    informatika to help first year student improving web
     development skill that they get from lectures. Here is
     my learning roadmap that i use for teaching`,
     href: "https://github.com/wrideveloper/miniclass-web/",
@@ -291,13 +291,13 @@ const wriProjects: ProjectCardHorizontalProps[] = [
   },
   {
     title: "WRI Web Profile",
-    description: `Back in 2016, Workshop Riset Informatika is a new community in state polytechnic of malang, So i create a landing page to introduce the community to the other community, so they can collabs together`,
+    description: `Back in 2016, Workshop Riset Informatika is a new community in state polytechnic of malang, So i create a landing page to introduce workshop riset informatika to the other community`,
     href: "http://wri.polinema.ac.id/",
     icon: <FaGlobeAmericas size="24" />,
   },
   {
     title: "Crew Monitoring",
-    description: `Day by day, the crew of workshop & riset informatika are increasing, So i create a platform to list the crew of the community. it can also help me to make attendance to the bootcamp participants`,
+    description: `Day by day, the crew of workshop & riset informatika are increasing, So i create a platform to list the crew of the community. It can also help me to list the attendees who come to workshop riset informatika coding bootcamp`,
     href: "https://github.com/wrideveloper/crew-monitoring",
     icon: <FaUsers size="24" />,
   },
@@ -478,10 +478,10 @@ export default function Home() {
               </Box>
             </Heading>
             <Text>
-              Frontend engineering enthusiast that loves well performance and
-              tested code. Experienced in Javascript, Typescript, React, and
-              other modern frontend concepts. Love learning and teaching others
-              to grow together
+              Frontend engineer who has a burning passion for test-driven
+              development and performance optimization. Well experienced in
+              Javascript, Typescript, React, and other modern frontend concepts.
+              Love learning and teaching others to grow together
             </Text>
           </Stack>
           <GridItem>
@@ -507,12 +507,13 @@ export default function Home() {
           </Heading>
           <Text color="white" textAlign="center">
             I start my journey as a frontend engineer in 2017. I start by
-            deepening my javascript skill and doing some side projects. In 2019
-            I take an internship in a startup company. Then I work on some
-            freelance projects and get my first full-time job as a frontend
-            engineer in 2020. Now, I'm excited to continue my journey by
-            deepening my skill in automated testing and web performance skills.
-            Here are some tools that I use for developing frontend
+            deepening my javascript skill and doing some side projects. Then I
+            join the developer circle community in 2018 where I met and learned
+            from amazing people from various companies. In 2019 I take an
+            internship in a startup company. Then I work on some freelance
+            projects and get my first full-time job as a frontend engineer in
+            2020. Now, I'm excited to continue my journey by improving my skill
+            in frontend performance optimization.
           </Text>
         </Stack>
       </SectionContainer>
@@ -592,9 +593,9 @@ export default function Home() {
             </Stack>
             <Divider />
             <Text>
-              When I teach, I give a brief explanation of the topic, then I give
-              a problem related to that topic. After the students struggle with
-              the problem, I will show them how to solve it. I avoid giving the
+              When I teach, I give a brief explanation of the topic and the
+              problem related to it. After the students struggle with the
+              problem, I will show them how to solve it. I avoid giving the
               solution in the beginning. I want them to struggle to find the
               solution first. Struggling will help them to understand the
               solution that I will give later. I develop a learning platform
