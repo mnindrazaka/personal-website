@@ -364,7 +364,7 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
               </Box>
             </Heading>
             <Text>
-              Frontend engineer who has a burning passion for test-driven
+              Frontend engineer who has a tremendous passion for test-driven
               development and performance optimization. Well experienced in
               Javascript, Typescript, React, and other modern frontend concepts.
               Love learning and teaching others to grow together
