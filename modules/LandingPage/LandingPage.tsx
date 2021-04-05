@@ -2,47 +2,37 @@ import React from "react";
 import Head from "next/head";
 import {
   Box,
+  Button,
   Divider,
   Grid,
   GridItem,
   Heading,
   Image,
-  SimpleGrid,
   Stack,
   Text,
-  useColorMode,
-  Switch,
-  FormControl,
-  FormLabel,
-  Flex,
-  useColorModeValue,
-  IconButton,
-  Tooltip,
 } from "@chakra-ui/react";
 import {
   FaChalkboardTeacher,
   FaCode,
   FaCogs,
-  FaEnvelope,
-  FaFacebook,
-  FaGithub,
   FaGlobeAmericas,
-  FaLinkedin,
-  FaMoon,
   FaRocket,
-  FaSun,
-  FaTwitter,
   FaUsers,
 } from "react-icons/fa";
-import SectionContainer from "./SectionContainer";
 import SkillCard, { SkillCardProps } from "./SkillCard";
-import LinkButton from "./LinkButton";
 import ProjectCard, { ProjectCardProps } from "./ProjectCard";
 import ProjectCardHorizontal, {
   ProjectCardHorizontalProps,
 } from "./ProjectCardHorizontal";
-import SocialMediaButton, { SocialMediaButtonProps } from "./SocialMediaButton";
-import PostCard, { PostCardProps } from "./PostCard";
+import SocialMediaButton from "../../components/SocialMediaButton";
+import PostCard, { PostCardProps } from "../Blog/PostCard";
+import SectionContainer from "../../components/SectionContainer";
+import LinkButton from "../../components/LinkButton";
+import Menubar from "../../components/Menubar";
+import Footer, { socialMedias } from "../../components/Footer";
+import Link from "next/link";
+import { NextPage } from "next";
+import matter from "gray-matter";
 
 const skills: SkillCardProps[] = [
   {
@@ -331,122 +321,18 @@ const projects: ProjectCardProps[] = [
   },
 ];
 
-const socialMedias: SocialMediaButtonProps[] = [
-  {
-    href: "mailto:mnindrazaka@gmail.com",
-    "aria-label": "gmail",
-    icon: <FaEnvelope />,
-  },
-  {
-    href: "https://www.linkedin.com/in/mnindrazaka/",
-    "aria-label": "linkedin",
-    icon: <FaLinkedin />,
-  },
-  {
-    href: "https://github.com/mnindrazaka",
-    "aria-label": "github",
-    icon: <FaGithub />,
-  },
-  {
-    href: "https://twitter.com/mnindrazaka",
-    "aria-label": "twitter",
-    icon: <FaTwitter />,
-  },
-  {
-    href: "https://www.facebook.com/mnindrazaka/",
-    "aria-label": "facebook",
-    icon: <FaFacebook />,
-  },
-];
+type LandingPageProps = {
+  posts: PostCardProps[];
+};
 
-const posts: PostCardProps[] = [
-  {
-    title: "How React.createElement() works under the hood",
-    description:
-      "After I learn how to develop a frontend using React in Epic React, I want to be able to contribute to React. So I started taking the first steps to be able to contribute, which was understanding the code.",
-    href:
-      "https://mnindrazaka.com/how-react-create-element-works-under-the-hood/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/how-react-create-element-works-under-the-hood.jpeg",
-  },
-  {
-    title: "Why Redux Need Immutability",
-    description:
-      "When we working on a redux reducer, we need to make sure that we don’t mutate the previous state object.",
-    href: "https://mnindrazaka.com/why-redux-need-immutability/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/why-reducer-need-immutability.jpeg",
-  },
-  {
-    title: "Optimize Large List Using Windowing",
-    description:
-      "If we want to render a large number of items, for example, 10.000 items, it will take a little time before the items show in the browser. Try to hit the show button below and notice that there is a delay before the items show",
-    href: "https://mnindrazaka.com/optimize-large-list-using-windowing/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/optimize-large-list-using-windowing.jpeg",
-  },
-  {
-    title: "Persisting React State to Local Storage",
-    description:
-      "Last week, I develop a feature that needs to persist state into local storage. Here I want to share with you how I do it. To simplify my explanation, I will use the button counter component for example.",
-    href: "https://mnindrazaka.com/persisting-react-state-to-local-storage/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/persisting-react-state-to-local-storage.jpeg",
-  },
-  {
-    title: "Why We Can’t Use If Statement In JSX",
-    description:
-      "When I first started to learn React, i have a case to display an element in JSX based on condition. I started to think “Ok, i want to display this element based on condition, so i am gonna use if statement”. So, my component look like this",
-    href: "https://mnindrazaka.com/why-we-cant-use-if-statement-in-jsx/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/why-we-cant-use-if-statement-in-jsx.jpg",
-  },
-  {
-    title: "How to Enter JSX World Smoothly",
-    description:
-      "One problem that has to be faced by the new engineer when learning about React for the first time is understanding what is JSX and why we need it. When someone asks me to teach them about react, I always hard to explain JSX",
-    href: "https://mnindrazaka.com/how-to-enter-jsx-world-smoothly/",
-    imageUrl:
-      "https://mnindrazaka.com/images/post/how-to-enter-jsx-world-smoothly.jpg",
-  },
-];
-
-export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode();
-  const menuBackgroundColor = useColorModeValue("white", "gray.900");
+const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
   return (
     <>
       <Head>
         <title>M. Nindra Zaka</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex
-        boxShadow="md"
-        paddingY="4"
-        paddingX="8"
-        justifyContent="space-between"
-        alignItems="center"
-        position="fixed"
-        top="0"
-        left="0"
-        right="0"
-        backgroundColor={menuBackgroundColor}
-        zIndex="sticky"
-      >
-        <Heading size="md">M. Nindra Zaka</Heading>
-        <Tooltip
-          label={
-            colorMode === "dark" ? "Active light mode" : "Active dark mode"
-          }
-        >
-          <IconButton
-            icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
-            aria-label="colorMode"
-            onClick={toggleColorMode}
-            borderRadius="full"
-          />
-        </Tooltip>
-      </Flex>
+      <Menubar />
       <SectionContainer paddingY="24" marginTop="16">
         <Grid
           justifyItems={{ base: "center", lg: "flex-start" }}
@@ -666,9 +552,9 @@ export default function Home() {
             and give me a feedback
           </Text>
         </Stack>
-        <LinkButton href="https://mnindrazaka.com/" colorScheme="purple">
-          See all blog posts
-        </LinkButton>
+        <Link href="/blog">
+          <Button colorScheme="purple">See all blog posts</Button>
+        </Link>
       </SectionContainer>
 
       <SectionContainer marginTop="-32" paddingBottom="16">
@@ -687,35 +573,33 @@ export default function Home() {
         </Grid>
       </SectionContainer>
 
-      <SectionContainer bg="gray.900" paddingY="16">
-        <Stack>
-          <Heading size="lg" color="white" textAlign="center">
-            That's it
-          </Heading>
-          <Heading size="md" color="white" textAlign="center" marginBottom="8">
-            Want to know more ? Lets have a chat
-          </Heading>
-          <Stack
-            direction="row"
-            spacing={{ base: 4, lg: 8 }}
-            justifyContent="center"
-          >
-            {socialMedias.map((socialMedia) => (
-              <SocialMediaButton
-                {...socialMedia}
-                mode="dark"
-                key={socialMedia["aria-label"]}
-              />
-            ))}
-          </Stack>
-        </Stack>
-      </SectionContainer>
-
-      <SectionContainer bg="black" paddingY="8">
-        <Text color="white" textAlign="center">
-          Copyright &copy; 2021 M. Nindra Zaka
-        </Text>
-      </SectionContainer>
+      <Footer />
     </>
   );
-}
+};
+
+LandingPage.getInitialProps = async () => {
+  const context = require.context("../Blog/contents", false, /\.md$/);
+  const posts: PostCardProps[] = [];
+
+  for (const key of context.keys()) {
+    const fileName = key.slice(2);
+    const content = await import(`../Blog/contents/${fileName}`);
+    const meta = matter(content.default);
+
+    console.log(meta.data);
+
+    if (meta.data.highligted) {
+      posts.push({
+        title: meta.data.title,
+        description: meta.data.description,
+        href: `/blog/${fileName.replace(".md", "")}`,
+        imageUrl: meta.data.image,
+      });
+    }
+  }
+
+  return { posts };
+};
+
+export default LandingPage;

@@ -7,7 +7,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import LinkButton from "./LinkButton";
+import LinkButton from "../../components/LinkButton";
 
 export type ProjectCardProps = {
   title: string;
