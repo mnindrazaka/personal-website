@@ -1,7 +1,7 @@
 import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Box, Flex, Grid, Heading, Link, Stack, Text } from "@chakra-ui/layout";
 import React from "react";
-import LinkButton from "./LinkButton";
+import LinkButton from "../../components/LinkButton";
 
 export type ProjectCardHorizontalProps = {
   title: string;

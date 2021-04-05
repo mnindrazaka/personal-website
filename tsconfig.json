@@ -18,6 +18,10 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noImplicitAny": true,
+    "types": [
+      "node",
+      "webpack-env"
+    ]
   },
   "include": [
     "next-env.d.ts",
