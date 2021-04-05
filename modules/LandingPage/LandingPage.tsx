@@ -587,8 +587,6 @@ LandingPage.getInitialProps = async () => {
     const content = await import(`../Blog/contents/${fileName}`);
     const meta = matter(content.default);
 
-    console.log(meta.data);
-
     if (meta.data.highligted) {
       posts.push({
         title: meta.data.title,
