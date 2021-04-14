@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import {
   Box,
   Button,
@@ -328,10 +327,6 @@ type LandingPageProps = {
 const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
   return (
     <>
-      <Head>
-        <title>M. Nindra Zaka</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Menubar />
       <SectionContainer paddingY="24" marginTop="16">
         <Grid
