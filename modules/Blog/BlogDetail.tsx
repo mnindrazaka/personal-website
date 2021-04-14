@@ -6,12 +6,16 @@ import Menubar from "../../components/Menubar";
 import SectionContainer from "../../components/SectionContainer";
 import { Image } from "@chakra-ui/image";
 import MarkdownView from "../../components/MarkdownView";
+import Head from "next/head";
 
 type BlogDetailProps = GrayMatterFile<any>;
 
 const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
   return (
     <>
+      <Head>
+        <title>{data.title}</title>
+      </Head>
       <Menubar />
       <SectionContainer paddingY="28" paddingX={[4, 8, 16, 32, 320]}>
         <Stack spacing="4">

@@ -68,7 +68,7 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
   return (
     <>
       <Head>
-        <title>Blog - M. Nindra Zaka</title>
+        <title>Blog | M. Nindra Zaka</title>
       </Head>
       <Menubar />
 
