@@ -490,10 +490,7 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
               called Lentera to help me teaching with that kind of experience.
             </Text>
 
-            <LinkButton
-              href="https://lentera.netlify.app/courses/a1630b85-88a2-4b5d-81ef-84537263aba7/workshops/9858ac2b-1852-4b36-99e1-6f015b081629"
-              colorScheme="purple"
-            >
+            <LinkButton href="https://lentera.kanca.io/" colorScheme="purple">
               See Lentera
             </LinkButton>
           </Stack>
