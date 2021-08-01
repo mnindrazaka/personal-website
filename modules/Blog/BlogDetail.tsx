@@ -15,6 +15,7 @@ const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
     <>
       <Head>
         <title>{data.title}</title>
+        <link rel="preload" as="image" href={data.image} />
       </Head>
       <Menubar />
       <SectionContainer paddingY="28" paddingX={[4, 8, 16, 32, 320]}>
