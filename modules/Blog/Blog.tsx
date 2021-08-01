@@ -13,8 +13,7 @@ export const posts: PostCardProps[] = [
     title: "How React.createElement() works under the hood",
     description:
       "After I learn how to develop a frontend using React in Epic React, I want to be able to contribute to React. So I started taking the first steps to be able to contribute, which was understanding the code.",
-    href:
-      "https://mnindrazaka.com/how-react-create-element-works-under-the-hood/",
+    href: "https://mnindrazaka.com/how-react-create-element-works-under-the-hood/",
     imageUrl:
       "https://mnindrazaka.com/images/post/how-react-create-element-works-under-the-hood.jpeg",
   },
@@ -69,6 +68,10 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
     <>
       <Head>
         <title>Blog | M. Nindra Zaka</title>
+        <meta
+          name="description"
+          content="See all blog posts by M. Nindra Zaka"
+        />
       </Head>
       <Menubar />
 

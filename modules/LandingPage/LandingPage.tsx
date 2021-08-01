@@ -33,6 +33,7 @@ import Footer, { socialMedias } from "../../components/Footer";
 import Link from "next/link";
 import { NextPage } from "next";
 import matter from "gray-matter";
+import Head from "next/head";
 
 const skills: SkillCardProps[] = [
   {
@@ -328,6 +329,16 @@ type LandingPageProps = {
 const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
   return (
     <>
+      <Head>
+        <title>M. Nindra Zaka</title>
+        <meta
+          name="description"
+          content="Frontend engineer who has a tremendous passion for test-driven
+          development and performance optimization. Well experienced in
+          Javascript, Typescript, React, and other modern frontend concepts.
+          Love learning and teaching others to grow together"
+        />
+      </Head>
       <Menubar />
       <SectionContainer paddingY="24" marginTop="16">
         <Grid
@@ -347,7 +358,6 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
             overflow="hidden"
           >
             <Image
-              fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
               src="https://scontent.fsub8-1.fna.fbcdn.net/v/t1.6435-9/196165861_1141351472942808_1014001447042147133_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeE7BHxTZi_fHG8IrD3SgRRfSoZAuTJJV1ZKhkC5MklXVghYbdDrES-_EpQf3ulBO_fFw5kNcKL5SJzTOwlkj3De&_nc_ohc=NdrP1p61rOMAX-z7-um&_nc_ht=scontent.fsub8-1.fna&oh=a5ea9d0e004834869923372320fe12c7&oe=612A0E5B"
               alt="M. Nindra Zaka"
             />

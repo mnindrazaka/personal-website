@@ -14,7 +14,8 @@ const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
   return (
     <>
       <Head>
-        <title>{data.title}</title>
+        <title>{`${data.title} | M. Nindra Zaka`}</title>
+        <meta name="description" content={data.description} />
         <link rel="preload" as="image" href={data.image} />
       </Head>
       <Menubar />
