@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Divider,
+  Flex,
   Grid,
   GridItem,
   Heading,
@@ -335,16 +336,22 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
           textAlign={{ base: "center", lg: "left" }}
           gap="8"
         >
-          <Image
+          <Flex
+            justifyContent="center"
+            alignItems="center"
             borderWidth="medium"
             borderColor="gray.800"
             borderStyle="solid"
             borderRadius="full"
             boxSize="200px"
-            fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-            src="https://media-exp1.licdn.com/dms/image/C5603AQF_RgE0dAzCsw/profile-displayphoto-shrink_800_800/0/1591972651641?e=1619654400&v=beta&t=cdT0c9ntyOimTHYufrjwfrl8ReqDXX73U0tFJf46yN8"
-            alt="M. Nindra Zaka"
-          />
+            overflow="hidden"
+          >
+            <Image
+              fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
+              src="https://scontent.fsub8-1.fna.fbcdn.net/v/t1.6435-9/196165861_1141351472942808_1014001447042147133_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeE7BHxTZi_fHG8IrD3SgRRfSoZAuTJJV1ZKhkC5MklXVghYbdDrES-_EpQf3ulBO_fFw5kNcKL5SJzTOwlkj3De&_nc_ohc=NdrP1p61rOMAX-z7-um&_nc_ht=scontent.fsub8-1.fna&oh=a5ea9d0e004834869923372320fe12c7&oe=612A0E5B"
+              alt="M. Nindra Zaka"
+            />
+          </Flex>
           <Stack textAlign={{ base: "center", lg: "left" }}>
             <Heading size="xl">Hi Everyone</Heading>
             <Heading size="lg">
