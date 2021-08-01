@@ -21,7 +21,12 @@ const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
       <SectionContainer paddingY="28" paddingX={[4, 8, 16, 32, 320]}>
         <Stack spacing="4">
           <Heading textAlign="center">{data.title}</Heading>
-          <Image src={data.image} />
+          <Image
+            src={data.image}
+            maxWidth="100%"
+            height="auto"
+            style={{ aspectRatio: "4 / 3" }}
+          />
           <Box textAlign="center" marginBottom="4">
             <MarkdownView content={data.caption} />
           </Box>
