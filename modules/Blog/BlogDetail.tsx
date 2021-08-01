@@ -27,6 +27,7 @@ const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
             maxWidth="100%"
             height="auto"
             style={{ aspectRatio: "4 / 3" }}
+            alt={data.title}
           />
           <Box textAlign="center" marginBottom="4">
             <MarkdownView content={data.caption} />
