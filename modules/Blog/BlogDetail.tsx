@@ -17,6 +17,10 @@ const BlogDetail: NextPage<BlogDetailProps> = ({ content, data }) => {
         <title>{`${data.title} | M. Nindra Zaka`}</title>
         <meta name="description" content={data.description} />
         <link rel="preload" as="image" href={data.image} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={data.title} />
+        <meta property="og:description" content={data.description} />
+        <meta property="og:image" content={data.image} />
       </Head>
       <Menubar />
       <SectionContainer paddingY="28" paddingX={[4, 8, 16, 32, 320]}>
