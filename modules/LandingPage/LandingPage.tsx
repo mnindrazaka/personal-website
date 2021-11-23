@@ -7,7 +7,6 @@ import {
   Grid,
   GridItem,
   Heading,
-  Image,
   Stack,
   Text,
 } from "@chakra-ui/react";
@@ -33,6 +32,7 @@ import Footer, { socialMedias } from "../../components/Footer";
 import Link from "next/link";
 import { NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 
 const skills: SkillCardProps[] = [
   {
@@ -357,8 +357,10 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
             overflow="hidden"
           >
             <Image
-              src="https://scontent.fsub8-1.fna.fbcdn.net/v/t1.6435-9/196165861_1141351472942808_1014001447042147133_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeE7BHxTZi_fHG8IrD3SgRRfSoZAuTJJV1ZKhkC5MklXVghYbdDrES-_EpQf3ulBO_fFw5kNcKL5SJzTOwlkj3De&_nc_ohc=NdrP1p61rOMAX-z7-um&_nc_ht=scontent.fsub8-1.fna&oh=a5ea9d0e004834869923372320fe12c7&oe=612A0E5B"
+              src={require("./assets/images/profile.jpeg")}
               alt="M. Nindra Zaka"
+              width={200}
+              height={200}
             />
           </Flex>
           <Stack textAlign={{ base: "center", lg: "left" }}>
@@ -504,12 +506,14 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
             </LinkButton>
           </Stack>
 
-          <Image
-            display={{ base: "none", lg: "block" }}
-            fallbackSrc="https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png"
-            src={require("./professor.svg")}
-            alt="teaching"
-          />
+          <Box display={{ base: "none", lg: "block" }}>
+            <Image
+              src={require("./assets/images/professor.svg")}
+              alt="teaching"
+              width={991}
+              height={770}
+            />
+          </Box>
         </Grid>
       </SectionContainer>
 
