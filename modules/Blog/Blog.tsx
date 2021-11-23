@@ -6,7 +6,6 @@ import Menubar from "../../components/Menubar";
 import Footer from "../../components/Footer";
 import SectionContainer from "../../components/SectionContainer";
 import { NextPage } from "next";
-import matter from "gray-matter";
 
 export const posts: PostCardProps[] = [
   {
@@ -59,7 +58,7 @@ export const posts: PostCardProps[] = [
   },
 ];
 
-type BlogProps = {
+export type BlogProps = {
   posts: PostCardProps[];
 };
 
@@ -114,25 +113,6 @@ const Blog: NextPage<BlogProps> = ({ posts }) => {
       <Footer />
     </>
   );
-};
-
-Blog.getInitialProps = async () => {
-  const context = require.context("./contents", false, /\.md$/);
-  const posts: PostCardProps[] = [];
-
-  for (const key of context.keys()) {
-    const fileName = key.slice(2);
-    const content = await import(`./contents/${fileName}`);
-    const meta = matter(content.default);
-    posts.push({
-      title: meta.data.title,
-      description: meta.data.description,
-      href: `/blog/${fileName.replace(".md", "")}`,
-      imageUrl: meta.data.image,
-    });
-  }
-
-  return { posts };
 };
 
 export default Blog;

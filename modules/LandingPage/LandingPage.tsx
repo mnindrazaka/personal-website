@@ -32,7 +32,6 @@ import Menubar from "../../components/Menubar";
 import Footer, { socialMedias } from "../../components/Footer";
 import Link from "next/link";
 import { NextPage } from "next";
-import matter from "gray-matter";
 import Head from "next/head";
 
 const skills: SkillCardProps[] = [
@@ -322,7 +321,7 @@ const projects: ProjectCardProps[] = [
   },
 ];
 
-type LandingPageProps = {
+export type LandingPageProps = {
   posts: PostCardProps[];
 };
 
@@ -585,28 +584,6 @@ const LandingPage: NextPage<LandingPageProps> = ({ posts }) => {
       <Footer />
     </>
   );
-};
-
-LandingPage.getInitialProps = async () => {
-  const context = require.context("../Blog/contents", false, /\.md$/);
-  const posts: PostCardProps[] = [];
-
-  for (const key of context.keys()) {
-    const fileName = key.slice(2);
-    const content = await import(`../Blog/contents/${fileName}`);
-    const meta = matter(content.default);
-
-    if (meta.data.highligted) {
-      posts.push({
-        title: meta.data.title,
-        description: meta.data.description,
-        href: `/blog/${fileName.replace(".md", "")}`,
-        imageUrl: meta.data.image,
-      });
-    }
-  }
-
-  return { posts };
 };
 
 export default LandingPage;
